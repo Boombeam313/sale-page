@@ -1,18 +1,20 @@
-// import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 import './App.css'
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import Form from './components/form/Form';
+
+import Formname from './components/form/Formname';
+
+
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="form" element={<Form />} />
-        
-      </Routes>
-    </BrowserRouter>
+    <div>
+    <Formname/>
+    
+     
+    </div>
+    
   )
 }
 
