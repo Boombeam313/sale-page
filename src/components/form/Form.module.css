@@ -1,14 +1,13 @@
 .nameinput input {
   margin: 0 auto;
   display: block;
-  margin-top: 30px;
   width: 100%;
   height: calc(1em + .75rem + 2px);
   padding: .375rem .75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
@@ -73,6 +72,9 @@
   
   .buttonGroup {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     gap: 20px;
     height: 50px;
     place-items: center;
@@ -81,7 +83,7 @@
   }
   
   .questionButton {
-    width: 220px;
+    width: 250px;
     font-size: 2.5rem;
     color: #fff;
     border-radius: 5px;
@@ -180,7 +182,8 @@
 
   .checkboxcollectngin {
     margin-top: 30px;
-    width: 400px;
+    width: 30%;
+    min-width: 300px;
     border: 2px solid #ccc;
     padding: 5px;
     border-radius: 5px;
@@ -231,3 +234,65 @@
     border-color: #ccc;
   }
   
+/* Form.module.css */
+
+.bankAccountDetails {
+  margin-top: 10px;
+}
+
+.bankAccountTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bankAccountTable th,
+.bankAccountTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.bankAccountTable th {
+  background-color: #f2f2f2;
+}
+
+.accountNumberRef input{
+  border: none;
+}
+
+.copybutton{
+  width: 100px;
+  font-size: 2.5rem;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    overflow: hidden;
+    background: linear-gradient(45deg, #78b6df, #89c0f1);
+    position: relative;
+}
+
+
+.checkboxcollectngin {
+  margin-bottom: 10px; /* Adjust the margin bottom as needed */
+}
+
+/* Add these styles for the file upload */
+.uploadContainer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#fileUpload {
+  margin-left: 10px; /* Adjust the margin left as needed */
+}
+
