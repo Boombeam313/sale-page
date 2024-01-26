@@ -1,4 +1,4 @@
-// Form.js
+// Formname.js
 
 import React, { useState, useRef } from "react";
 import styles from './Form.module.css';
@@ -18,7 +18,20 @@ const Formname = () => {
   const accountNumberRef = useRef(null);
 
   const handleOrderButtonClick = () => {
+    // แสดงข้อมูลที่ต้องการลงใน console
+    console.log("ชื่อ-นามสกุล:", name);
+    console.log("เบอร์โทร:", phone);
+    console.log("ที่อยู่จัดส่ง:", address);
+    console.log("วิธีการชำระเงิน:", paymentMethod);
+    if (paymentMethod === 2) {
+      console.log("เลขบัญชีธนาคาร (ถ้าเลือกโอนเงิน):", accountNumberRef.current.value);
+      console.log("ไฟล์ที่อัปโหลด (ถ้าเลือกโอนเงิน):", selectedFile ? selectedFile.name : "ไม่มีไฟล์ที่อัปโหลด");
+    }
+
+    // แสดง alert
     alert("Order placed successfully!");
+
+    // โฟกัสที่ input ชื่อ-นามสกุล
     nameInputRef.current.focus();
   };
 
@@ -80,23 +93,25 @@ const Formname = () => {
               </tr>
               <tr>
                 <td>หลักฐานการโอนเงิน</td>
-                <td><div className={styles.uploadButton}>
-                <label htmlFor="fileInput" className={styles.uploadLabel}>
-                <FaUpload /> Upload File
-                </label>
-                <input
-                type="file"
-                id="fileInput"
-                accept=".jpg, .jpeg, .png, .gif"
-                onChange={handleFileChange}
-                style={{ display: "none" }}
-                />
-        {selectedFile && (
-          <span className={styles.selectedFile}>
-            <FaFile /> {selectedFile.name}
-          </span>
-        )}
-      </div></td>
+                <td>
+                  <div className={styles.uploadButton}>
+                    <label htmlFor="fileInput" className={styles.uploadLabel}>
+                      <FaUpload /> Upload File
+                    </label>
+                    <input
+                      type="file"
+                      id="fileInput"
+                      accept=".jpg, .jpeg, .png, .gif"
+                      onChange={handleFileChange}
+                      style={{ display: "none" }}
+                    />
+                    {selectedFile && (
+                      <span className={styles.selectedFile}>
+                        <FaFile /> {selectedFile.name}
+                      </span>
+                    )}
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -153,6 +168,9 @@ const Formname = () => {
       </div>
 
       {renderBankAccountDetails()}
+      <div className={styles.ConfirmButton}>
+        <button onClick={handleOrderButtonClick}>ยืนยันคำสั่งซื้อ</button>
+      </div>
 
       <div className={styles.buttonContainer}>
         <div className={styles.buttonGroup}>
@@ -162,7 +180,7 @@ const Formname = () => {
             rel="noopener noreferrer"
             className={styles.questionButton}
           >
-            <FaLine />สอบถาม
+            <FaLine /> สอบถาม
           </a>
           <button
             className={styles.callButton}
