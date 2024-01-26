@@ -1,0 +1,360 @@
+
+
+.image-container {
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    display: block;
+  }
+  /* TextStyles.css */
+
+.title {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    font-weight: bold;
+
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image {
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    display: block;
+  }
+  
+  .content {
+    
+        font-size: 40px;
+        font-family: 'Kanit';
+        text-align: left;
+        margin-bottom: 10px;
+        margin-left: 120px;
+        margin-right: 100px;
+    
+  }
+  
+  .subtitle {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    font-weight: bold;
+  }
+  
+  .last-image {
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    display: block; /* Ensures that the image behaves as a block-level element */
+}
+
+  
+  .last-content {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+
+
+
+  /*2 */
+
+.additional-title {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    font-weight: bold;
+  }
+  
+  .additional-image {
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    display: block;
+  }
+  
+  .additional-content {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  
+  
+
+  /* 3 */
+
+.additional-title {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    
+  }
+  
+  .additional-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  .additional-content {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  
+
+  /* 4 */
+
+.additional-content-container {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  
+  .additional-subtitle {
+    font-size: 50px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    color: red;
+    font-weight: bold;
+
+  }
+  
+  .additional-inner-content {
+    font-size: 30px;
+    color: black;
+  }
+  
+  .additional-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+
+
+  /* 5 */
+
+.additional-content-container {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  
+  .additional-subtitle {
+    font-size: 50px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 20px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .additional-inner-content {
+    font-size: 30px;
+    color: black;
+  }
+  
+  .additional-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  /* 6 */
+
+.product-promotion-container {
+    font-size: 20px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .product-promotion-title {
+    font-size: 50px;
+    font-family: 'Kanit';
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .product-promotion-subtitle {
+    font-size: 30px;
+    color: red;
+  }
+  
+  .product-promotion-description {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-inline: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+  
+  .product-promotion-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  /* NanoVACoffeeStyles.css */
+
+.nano-va-coffee-container {
+    margin-bottom: 5px;
+  }
+  
+  .nano-va-coffee-image {
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    display: block;
+  }
+  
+  .nano-va-coffee-title {
+    font-size: 80px;
+    font-family: 'Kanit';
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .nano-va-coffee-subtitle {
+    font-size: 50px;
+    font-family: 'Kanit';
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .nano-va-coffee-tagline {
+    font-size: 30px;
+    color: red;
+  }
+  
+  .nano-va-coffee-text {
+    font-size: 20px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+/* styles.css */
+
+.section-container {
+    font-size: 20px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .sub-section-container {
+    font-size: 150px;
+    font-family: 'Kanit';
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .image-container {
+    margin-bottom: 5px;
+  }
+  
+  .image-container img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  /* styles.css */
+
+.main-container {
+    font-size: 20px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .review-heading {
+    font-size: 150px;
+    font-family: 'Kanit';
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .image-container {
+    margin-bottom: 5px;
+  }
+  
+  .image-container img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  /* end */
+
+.container {
+    font-size: 20px;
+    font-family: 'Kanit';
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .heading {
+    font-size: 150px;
+    font-family: 'Kanit';
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    margin-bottom: 5px;
+  }
+  
+  .image-container img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .small-heading {
+    font-size: 80px;
+    font-family: 'Kanit';
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .promotion-img {
+    max-width: 70%;
+    height: auto;
+  }
+  

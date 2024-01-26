@@ -100,7 +100,11 @@
     background: linear-gradient(45deg, #04f404, #0af36b);
     position: relative;
     text-decoration: none;
-  }
+
+    /* Center text horizontally */
+    text-align: center;
+}
+
   
   .callButton {
     width: 250px;

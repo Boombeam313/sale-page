@@ -162,7 +162,7 @@ const Formname = () => {
             rel="noopener noreferrer"
             className={styles.questionButton}
           >
-            <FaLine />สอบถาม
+            <FaLine /> สอบถาม
           </a>
           <button
             className={styles.callButton}
