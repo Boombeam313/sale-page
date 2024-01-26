@@ -300,3 +300,25 @@
   margin-left: 10px; /* Adjust the margin left as needed */
 }
 
+.ConfirmButton Button {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 100%;
+  font-size: 2.5rem;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff8c00, #ff7f50); /* เปลี่ยนสีเป็นสีส้ม */
+  position: relative;
+}
+
+
