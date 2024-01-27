@@ -13,12 +13,12 @@ const Formname = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
   const handleOrderButtonClick = () => {
-    // แสดงข้อมูลที่ต้องการลงใน console
     console.log("ชื่อ-นามสกุล:", name);
     console.log("เบอร์โทร:", phone);
     console.log("ที่อยู่จัดส่ง:", address);
@@ -27,12 +27,15 @@ const Formname = () => {
       console.log("เลขบัญชีธนาคาร (ถ้าเลือกโอนเงิน):", accountNumberRef.current.value);
       console.log("ไฟล์ที่อัปโหลด (ถ้าเลือกโอนเงิน):", selectedFile ? selectedFile.name : "ไม่มีไฟล์ที่อัปโหลด");
     }
+    console.log("Selected Product:", selectedProduct);
 
-    // แสดง alert
     alert("Order placed successfully!");
 
-    // โฟกัสที่ input ชื่อ-นามสกุล
     nameInputRef.current.focus();
+  };
+
+  const handleProductSelect = (selectedProduct) => {
+    setSelectedProduct(selectedProduct);
   };
 
   const handleCallButtonClick = () => {
@@ -96,7 +99,7 @@ const Formname = () => {
                 <td>
                   <div className={styles.uploadButton}>
                     <label htmlFor="fileInput" className={styles.uploadLabel}>
-                      <FaUpload /> Upload File
+                      <FaUpload /> เลือกไฟล์
                     </label>
                     <input
                       type="file"
@@ -122,7 +125,7 @@ const Formname = () => {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <div className={styles.nameinput}>
         <input
           type="text"
@@ -154,7 +157,7 @@ const Formname = () => {
       <div className={styles.checkboxcollectngin}>
         <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
           <Radio value={1}>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เก็บเงินปลายทาง  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <FaTruckFast />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เก็บเงินปลายทาง   &nbsp; <FaTruckFast />
           </Radio>
         </Radio.Group>
       </div>
@@ -162,12 +165,13 @@ const Formname = () => {
       <div className={styles.checkboxcollectngin}>
         <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
           <Radio value={2}>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โอนเงิน   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <FaRegCreditCard />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; โอนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <FaRegCreditCard />
           </Radio>
         </Radio.Group>
       </div>
 
       {renderBankAccountDetails()}
+
       <div className={styles.ConfirmButton}>
         <button onClick={handleOrderButtonClick}>ยืนยันคำสั่งซื้อ</button>
       </div>

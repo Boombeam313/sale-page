@@ -3,7 +3,8 @@ import './App.css';
 import Formname from './components/form/Formname';
 import Text from "./components/text1/Text";
 import Moneybutton from './components/moneybutton/Moneybutton';
-import ProductSelection from './components/productcard/ProductSelection'
+import ProductSelection from './components/product/ProductSelection'
+
 function App() {
   return (
     <div className="app">

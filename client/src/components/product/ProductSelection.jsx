@@ -1,10 +1,11 @@
 // ProductSelection.js
+
 import React, { useState } from 'react';
 import './Project.css';
 
 const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
   const handleSelect = () => {
-    onSelect({ id, name, isSelected: !isSelected });
+    onSelect({ id, name, price, isSelected: !isSelected });
   };
 
   return (
@@ -18,10 +19,10 @@ const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
 
 const ProductSelection = () => {
   const products = [
-    { id: 1, name: 'Product 1', imageSrc: 'product1.jpg', price: '$10' },
-    { id: 2, name: 'Product 2', imageSrc: 'product2.jpg', price: '$20' },
-    { id: 3, name: 'Product 3', imageSrc: 'product3.jpg', price: '$30' },
-    { id: 4, name: 'Product 4', imageSrc: 'product4.jpg', price: '$40' },
+    { id: 1, name: 'nanova 1 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
+    { id: 2, name: 'nanova 2 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
+    { id: 3, name: 'nanova 3 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
+    { id: 4, name: 'nanova 4 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
     // Add more products as needed
   ];
 
@@ -33,7 +34,6 @@ const ProductSelection = () => {
 
   return (
     <div>
-      <h1>Product Selection</h1>
       <div className="product-container">
         {products.map((product) => (
           <ProductCard
@@ -48,13 +48,20 @@ const ProductSelection = () => {
         ))}
       </div>
       <div>
-        <h2>Selected Product</h2>
+        <p className='productname'>สินค้าที่เลือก</p>
         {selectedProduct ? (
-          <ul>
-            <li key={selectedProduct.id}>{selectedProduct.name}</li>
-          </ul>
+          <div className="selected-product-table">
+            <div className="table-row">
+              <div className="table-cell">ชื่อ:</div>
+              <div className="table-cell">{selectedProduct.name}</div>
+            </div>
+            <div className="table-row">
+              <div className="table-cell">ราคา:</div>
+              <div className="table-cell">{selectedProduct.price}</div>
+            </div>
+          </div>
         ) : (
-          <p>No product selected</p>
+          <p>ยังไม่มีสินค้าที่เลือก</p>
         )}
       </div>
     </div>

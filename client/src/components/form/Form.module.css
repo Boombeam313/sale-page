@@ -74,7 +74,7 @@
   }
   
   .buttonGroup {
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,13 +82,14 @@
     gap: 20px;
     height: 50px;
     place-items: center;
-    font-weight: bold;
+    
     
   }
   
   .questionButton {
     width: 250px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
     border-radius: 5px;
     padding: 15px;
@@ -99,7 +100,6 @@
     box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
     outline: none;
     border: none;
-    font-size: 1rem;
     overflow: hidden;
     background: linear-gradient(45deg, #04f404, #0af36b);
     position: relative;
@@ -112,7 +112,8 @@
   
   .callButton {
     width: 250px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
     border-radius: 5px;
     padding: 15px;
@@ -123,7 +124,6 @@
     box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
     outline: none;
     border: none;
-    font-size: 1rem;
     overflow: hidden;
     background: linear-gradient(45deg, #f50202, #e51616);
     position: relative;
@@ -131,7 +131,8 @@
   
   .orderButton {
     width: 250px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
     border-radius: 5px;
     padding: 15px;
@@ -142,7 +143,6 @@
     box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
     outline: none;
     border: none;
-    font-size: 1rem;
     overflow: hidden;
     background: linear-gradient(45deg, #3498db, #1080e3);
     position: relative;
@@ -184,6 +184,7 @@
   .callButton:hover::before,
   .orderButton:hover::before {
     opacity: 1;
+    font-size: 2.5rem;
     text-decoration: none;
   }
   
@@ -195,6 +196,7 @@
     border: 2px solid #ccc;
     padding: 5px;
     border-radius: 5px;
+    font-size: 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -204,6 +206,7 @@
     appearance: none;
     width: 20px;
     height: 20px;
+    font-size: 1.5rem;
     border: 2px solid #ccc;
     border-radius: 50%;
     cursor: pointer;
@@ -224,6 +227,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    font-size: 1.5rem;
     transform: translate(-50%, -50%);
     text-align: center; /* Center the text */
     line-height: 20px; /* Set the line height equal to the checkbox height for vertical centering */
@@ -231,6 +235,9 @@
   
   .checkboxcollectngin label {
     cursor: pointer;
+    font-size: 1.5rem;
+    font-family: 'Kanit', sans-serif;
+    
   }
   
   .checkboxcollectngin input[type="checkbox"]:not(:checked) {
@@ -294,7 +301,7 @@
 
 .checkboxcollectngin {
   margin-bottom: 10px; /* Adjust the margin bottom as needed */
-  font-size: 1.5rem;
+  
 }
 
 /* Add these styles for the file upload */
@@ -312,7 +319,7 @@
   margin-top: 30px;
   margin-bottom: 100px;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -323,7 +330,7 @@
   box-shadow: inset 2px 2px 2px 0 hsla(0, 0%, 100%, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
   outline: none;
   border: none;
-  font-size: 1rem;
+  font-weight: bold;
   overflow: hidden;
   background: linear-gradient(45deg, #ff8c00, #ff7f50); /* เปลี่ยนสีเป็นสีส้ม */
   position: relative;
