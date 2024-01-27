@@ -4,7 +4,14 @@ import './Text.css'; // Import the CSS file
 
 export default function Text() {
   return (
+    
     <>
+    <video
+  controls
+  autoplay src="public/video/ปัญหา.mp4"
+/>
+
+
       <div className="image-container">
         <img
           src="./public/image/Auntie Man.webp"
@@ -218,6 +225,11 @@ export default function Text() {
         </div>
       </div>
 
+      <video
+  controls
+  autoplay src="public/video/nanoVA1.mp4"
+/>
+
       <div className="product-promotion-container">
         <div className="product-promotion-description">
           พอกันทีกับการ เสียเงิน เสียเวลา ไปกับการดูแลผิวและควบคุมน้ำหนักโดยเสียเงินไปอย่างสิ้นเปลือง ให้ nanoVA ช่วยดูแลคุณ แค่ดื่มวันละ 1 - 2 แก้ว ช่วยให้ระบบเผาผลาญดีขึ้น และ
@@ -256,11 +268,11 @@ export default function Text() {
         </div>
       </div>
 
-      <div className="nano-va-coffee-text">
+
         <div className="nano-va-coffee-subtitle">
           กาแฟ นาโนวา <span className="nano-va-coffee-tagline"></span>
         </div>
-      </div>
+     
 
       <div style={{ fontSize: '30px', fontFamily: 'Kanit', textAlign: 'left', marginBottom: '10px', marginLeft: '120px' ,marginRight: '120px' }}>
 
@@ -366,6 +378,9 @@ export default function Text() {
         />
       </div>
       <div className="container">
+        <div className="small-heading">
+          nano <span style={{ fontSize: '80px', color: '#710C04' }}>VA</span> 
+        </div>
         <div className="small-heading">
           nano <span style={{ fontSize: '80px', color: '#710C04' }}>VA</span> 
         </div>
