@@ -1,45 +1,36 @@
-
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const connectDB = require('./db/db')
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const connectDB = require("./db/db");
 require("dotenv").config();
 
-const multer = require('multer')
-
-const order = require('./routes/orderRoute')
-const product = require('./routes/productRoute')
 
 
+const order = require("./routes/orderRoute");
+const product = require("./routes/productRoute");
 
-connectDB()
+connectDB();
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors())
 
-app.use('/api/product', product)
-app.use('/api/order', order)
+app.use("/api/product", product);
+app.use("/api/order", order);
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './uploads/')
-    },
-    filename: function (req, file, cb) {
-      const fileName = `${Date.now()}-${file.originalname}`
-      cb(null, fileName)
-    }
-  })
+
+
+// app.post('/upload', upload.single('file'), (req, res) => {
+//     // Access the form data in req.body and file data in req.file
+//     console.log('Received Order Data:', req.body);
+//     console.log(req.body.name)
+//     console.log('Received File Data:', req.file);
   
-  const upload = multer({
-    storage: storage
-  })
+//     // Process the data and respond to the client
+//     res.json({ message: 'Order received successfully!' });
+//   });
 
-
-app.post('/upload', upload.single('test'), (req, res) => {
-    res.send(req.file)
-  })
-
-app.listen(process.env.PORT, () =>{
-    console.log(`App running at ${process.env.PORT}`)
-})
+app.listen(process.env.PORT, () => {
+  console.log(`App running at ${process.env.PORT}`);
+});
