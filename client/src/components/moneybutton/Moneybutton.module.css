@@ -1,0 +1,102 @@
+:root {
+    --duration: 3s;
+    --easing: linear;
+    --delay: 0s;
+}
+
+@keyframes shine { 
+    20%, 100% { transform: translateX(150%); }
+}
+
+
+
+
+
+
+.buttonLine {
+    margin: 0 auto;
+    background-color: #03ee03;
+    /* สีเขียวที่สดใสกว่า */
+    width: 400px;
+    padding: 15px 30px;
+    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
+    border: none;
+    /* ลบเส้นขอบปุ่ม */
+    border-radius: 50px;
+    /* ปุ่มทรงกลม */
+    color: white;
+    /* ข้อความสีขาว */
+    font-size: 18px;
+    /* เพิ่มขนาดตัวอักษร */
+    font-weight: bold;
+    /* ข้อความหนา */
+    text-transform: uppercase;
+    /* ข้อความตัวพิมพ์ใหญ่ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* เงาให้ปุ่ม */
+    transition: background-color 0.3s ease-in-out;
+    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
+}
+
+.buttonFacebook {
+    margin: 0 auto;
+    background-color: #0f0be4;
+    /* สีเขียวที่สดใสกว่า */
+    width: 400px;
+    padding: 15px 30px;
+    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
+    border: none;
+    /* ลบเส้นขอบปุ่ม */
+    border-radius: 50px;
+    /* ปุ่มทรงกลม */
+    color: white;
+    /* ข้อความสีขาว */
+    font-size: 18px;
+    /* เพิ่มขนาดตัวอักษร */
+    font-weight: bold;
+    /* ข้อความหนา */
+    text-transform: uppercase;
+    /* ข้อความตัวพิมพ์ใหญ่ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* เงาให้ปุ่ม */
+    transition: background-color 0.3s ease-in-out;
+    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
+
+}
+.buttonCall {
+    margin: 0 auto;
+    background-color: #ee0000;
+    /* สีเขียวที่สดใสกว่า */
+    width: 400px;
+    padding: 15px 30px;
+    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
+    border: none;
+    /* ลบเส้นขอบปุ่ม */
+    border-radius: 50px;
+    /* ปุ่มทรงกลม */
+    color: white;
+    /* ข้อความสีขาว */
+    font-size: 18px;
+    /* เพิ่มขนาดตัวอักษร */
+    font-weight: bold;
+    /* ข้อความหนา */
+    text-transform: uppercase;
+    /* ข้อความตัวพิมพ์ใหญ่ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* เงาให้ปุ่ม */
+    transition: background-color 0.3s ease-in-out;
+    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
+    margin-bottom: 30px;
+    
+}
+
+.shine {
+transform: skewX(-20deg) translateX(-100%);
+    animation: var(--duration) var(--easing) var(--delay) infinite forwards shine;
+}

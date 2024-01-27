@@ -180,19 +180,19 @@ const Formname = () => {
             rel="noopener noreferrer"
             className={styles.questionButton}
           >
-            <FaLine /> สอบถาม
+            <FaLine  size={30}/> สอบถาม
           </a>
           <button
             className={styles.callButton}
             onClick={handleCallButtonClick}
           >
-            <IoCall /> โทร
+            <IoCall size={30}/> โทร
           </button>
           <button
             className={styles.orderButton}
             onClick={handleOrderButtonClick}
           >
-            <TiShoppingCart /> สั่งซื้อ
+            <TiShoppingCart size={30}/> สั่งซื้อ
           </button>
         </div>
       </div>
