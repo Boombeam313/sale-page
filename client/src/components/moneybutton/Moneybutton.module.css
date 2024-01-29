@@ -1,102 +1,83 @@
+/* Form.module.css */
+
 :root {
     --duration: 3s;
     --easing: linear;
     --delay: 0s;
-}
-
-@keyframes shine { 
-    20%, 100% { transform: translateX(150%); }
-}
-
-
-
-
-
-
-.buttonLine {
-    margin: 0 auto;
-    background-color: #03ee03;
-    /* สีเขียวที่สดใสกว่า */
-    width: 400px;
-    padding: 15px 30px;
-    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
-    border: none;
-    /* ลบเส้นขอบปุ่ม */
-    border-radius: 50px;
-    /* ปุ่มทรงกลม */
-    color: white;
-    /* ข้อความสีขาว */
-    font-size: 1.5rem;
-    /* เพิ่มขนาดตัวอักษร */
-    font-weight: bold;
-    /* ข้อความหนา */
-    text-transform: uppercase;
-    /* ข้อความตัวพิมพ์ใหญ่ */
-    cursor: pointer;
-    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    /* เงาให้ปุ่ม */
-    transition: background-color 0.3s ease-in-out;
-    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
-}
-
-.buttonFacebook {
-    margin: 0 auto;
-    background-color: #0f0be4;
-    /* สีเขียวที่สดใสกว่า */
-    width: 400px;
-    padding: 15px 30px;
-    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
-    border: none;
-    /* ลบเส้นขอบปุ่ม */
-    border-radius: 50px;
-    /* ปุ่มทรงกลม */
-    color: white;
-    /* ข้อความสีขาว */
-    font-size: 1.5rem;
-    /* เพิ่มขนาดตัวอักษร */
-    font-weight: bold;
-    /* ข้อความหนา */
-    text-transform: uppercase;
-    /* ข้อความตัวพิมพ์ใหญ่ */
-    cursor: pointer;
-    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    /* เงาให้ปุ่ม */
-    transition: background-color 0.3s ease-in-out;
-    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
-
-}
-.buttonCall {
-    margin: 0 auto;
-    background-color: #ee0000;
-    /* สีเขียวที่สดใสกว่า */
-    width: 400px;
-    padding: 15px 30px;
-    /* เพิ่มระยะห่างระหว่างขอบปุ่มกับข้อความ */
-    border: none;
-    /* ลบเส้นขอบปุ่ม */
-    border-radius: 50px;
-    /* ปุ่มทรงกลม */
-    color: white;
-    /* ข้อความสีขาว */
-    font-size: 1.5rem;
-    /* เพิ่มขนาดตัวอักษร */
-    font-weight: bold;
-    /* ข้อความหนา */
-    text-transform: uppercase;
-    /* ข้อความตัวพิมพ์ใหญ่ */
-    cursor: pointer;
-    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    /* เงาให้ปุ่ม */
-    transition: background-color 0.3s ease-in-out;
-    /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
+  }
+  
+  @keyframes shine {
+    20%, 100% {
+      transform: translateX(150%);
+    }
+  }
+  
+  .buttonWave {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .buttonWave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    animation: wave 2s infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Center the buttons */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 30px;
-    
-}
-
-.shine {
-transform: skewX(-20deg) translateX(-100%);
+  }
+  
+  .buttonLine,
+  .buttonFacebook,
+  .buttonCall {
+    width: 400px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .buttonLine {
+    background-color: #03ee03;
+  }
+  
+  .buttonFacebook {
+    background-color: #0f0be4;
+  }
+  
+  .buttonCall {
+    background-color: #ee0000;
+  }
+  
+  .shine {
+    transform: skewX(-20deg) translateX(-100%);
     animation: var(--duration) var(--easing) var(--delay) infinite forwards shine;
-}
+  }

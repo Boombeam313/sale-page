@@ -8,34 +8,53 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaTruckFast, FaRegCreditCard, FaCopy } from "react-icons/fa6";
 import { Radio } from 'antd';
 
+
+const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
+  const handleSelect = () => {
+    onSelect({ id, name, price, isSelected: !isSelected });
+  };
+
+  return (
+    <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
+      <img className="product-image" src={imageSrc} alt={name} />
+      <p>{name}</p>
+      <p>{price}</p>
+    </div>
+  );
+};
+
 const Formname = () => {
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState(1);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleProductSelect = (selectedProduct) => {
+    setSelectedProduct(selectedProduct);
+  };
+
   const handleOrderButtonClick = () => {
+    // แสดงข้อมูลที่ต้องการลงใน console
     console.log("ชื่อ-นามสกุล:", name);
     console.log("เบอร์โทร:", phone);
     console.log("ที่อยู่จัดส่ง:", address);
     console.log("วิธีการชำระเงิน:", paymentMethod);
+    console.log('selected pro', selectedProduct )
     if (paymentMethod === 2) {
       console.log("เลขบัญชีธนาคาร (ถ้าเลือกโอนเงิน):", accountNumberRef.current.value);
       console.log("ไฟล์ที่อัปโหลด (ถ้าเลือกโอนเงิน):", selectedFile ? selectedFile.name : "ไม่มีไฟล์ที่อัปโหลด");
     }
-    console.log("Selected Product:", selectedProduct);
 
+    // แสดง alert
     alert("Order placed successfully!");
 
+    // โฟกัสที่ input ชื่อ-นามสกุล
     nameInputRef.current.focus();
-  };
-
-  const handleProductSelect = (selectedProduct) => {
-    setSelectedProduct(selectedProduct);
   };
 
   const handleCallButtonClick = () => {
@@ -67,10 +86,20 @@ const Formname = () => {
     }
   };
 
+  const products = [
+    { id: 1, name: 'nanova 1 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
+    { id: 2, name: 'nanova 2 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
+    { id: 3, name: 'nanova 3 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
+    { id: 4, name: 'nanova 4 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
+    // Add more products as needed
+  ];
+
   const renderBankAccountDetails = () => {
     if (paymentMethod === 2) {
       return (
+        
         <div className={styles.bankAccountDetails}>
+          
           <p>กรุณาโอนเงินไปที่บัญชีธนาคาร</p>
           <table className={styles.bankAccountTable}>
             <tbody>
@@ -125,7 +154,42 @@ const Formname = () => {
   };
 
   return (
-    <div className={styles.formContainer}>
+
+    <>
+ <div>
+      <div className="product-container">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            imageSrc={product.imageSrc}
+            price={product.price}
+            onSelect={handleProductSelect}
+            isSelected={selectedProduct && selectedProduct.id === product.id}
+          />
+        ))}
+      </div>
+      <div>
+        <p className='productname'>สินค้าที่เลือก</p>
+        {selectedProduct ? (
+          <div className="selected-product-table">
+            <div className="table-row">
+              <div className="table-cell">ชื่อ:</div>
+              <div className="table-cell">{selectedProduct.name}</div>
+            </div>
+            <div className="table-row">
+              <div className="table-cell">ราคา:</div>
+              <div className="table-cell">{selectedProduct.price}</div>
+            </div>
+          </div>
+        ) : (
+          <p>ยังไม่มีสินค้าที่เลือก</p>
+        )}
+      </div>
+    </div>
+    
+    <div>
       <div className={styles.nameinput}>
         <input
           type="text"
@@ -134,7 +198,7 @@ const Formname = () => {
           value={name}
           onChange={(event) => setName(event.target.value)}
           ref={nameInputRef}
-        />
+          />
       </div>
       <div className={styles.phoneinput}>
         <input
@@ -151,7 +215,7 @@ const Formname = () => {
           placeholder="กรุณากรอกที่อยู่จัดส่งสินค้า"
           value={address}
           onChange={(event) => setAddress(event.target.value)}
-        />
+          />
       </div>
 
       <div className={styles.checkboxcollectngin}>
@@ -171,7 +235,6 @@ const Formname = () => {
       </div>
 
       {renderBankAccountDetails()}
-
       <div className={styles.ConfirmButton}>
         <button onClick={handleOrderButtonClick}>ยืนยันคำสั่งซื้อ</button>
       </div>
@@ -183,24 +246,25 @@ const Formname = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.questionButton}
-          >
+            >
             <FaLine  size={30}/> สอบถาม
           </a>
           <button
             className={styles.callButton}
             onClick={handleCallButtonClick}
-          >
+            >
             <IoCall size={30}/> โทร
           </button>
           <button
             className={styles.orderButton}
             onClick={handleOrderButtonClick}
-          >
+            >
             <TiShoppingCart size={30}/> สั่งซื้อ
           </button>
         </div>
       </div>
     </div>
+            </>
   );
 };
 

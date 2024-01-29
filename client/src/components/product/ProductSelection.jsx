@@ -3,19 +3,22 @@
 import React, { useState } from 'react';
 import './Project.css';
 
-const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
-  const handleSelect = () => {
-    onSelect({ id, name, price, isSelected: !isSelected });
-  };
+// const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
+//   const handleSelect = () => {
+//     onSelect({ id, name, price, isSelected: !isSelected });
+//   };
 
-  return (
-    <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
-      <img className="product-image" src={imageSrc} alt={name} />
-      <p>{name}</p>
-      <p>{price}</p>
-    </div>
-  );
-};
+//   return (
+//     <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
+//       <img className="product-image" src={imageSrc} alt={name} />
+//       <p>{name}</p>
+//       <p>{price}</p>
+//     </div>
+//   );
+// };
+
+
+////////////////////////////////////////////
 
 const ProductSelection = () => {
   const products = [

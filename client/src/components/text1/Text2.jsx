@@ -1,18 +1,14 @@
-// Text.jsx
 import React from 'react';
-import './Text.css'; // Import the CSS file
-import { ImCross } from "react-icons/im";
-import Moneybutton from '../moneybutton/Moneybutton';
+import './Text2.css';
 
-export default function Text() {
+function Text2() {
   return (
-    <>
-       <div>
+    <div>
       <div className="convideo">
         <video
           controls
           autoPlay
-          src="video/ปัญหา.mp4"
+          src="public/video/ปัญหา.mp4"
         />
       </div>
 
@@ -28,8 +24,6 @@ export default function Text() {
         ที่ต้องเสียเงินไปอย่างสิ้นเปลือง ให้ <span className="producttext5">nanoVA</span><span className="producttext6">ช่วยดูแลคุณ แค่ดื่มวันละ 1 - 2 แก้ว</span>
       </div>
 
-      <Moneybutton  />
-
       <div className="producttext7">
         สารสกัด <span className="producttext5"></span>
       </div>
@@ -41,7 +35,7 @@ export default function Text() {
       <div className="product-promotion-container">
         <div>
           <img
-            src="image/product1.webp"
+            src="public/image/product1.webp"
             alt="product"
             className="product-promotion-image"
           />
@@ -52,14 +46,14 @@ export default function Text() {
         <video
           controls
           autoPlay
-          src="video/nanoVA1.mp4"
+          src="public/video/nanoVA1.mp4"
         />
       </div>
 
       <div className="productimage">
         <div>
           <img
-            src="image2/Collagen peptides.jpg"
+            src="public/image2/Collagen peptides.jpg"
             alt="product"
             className="productimage"
           />
@@ -84,7 +78,7 @@ export default function Text() {
 <div className="productimage2">
         <div>
           <img
-            src="image2/Wheat Fiber.jpg"
+            src="public/image2/Wheat Fiber.jpg"
             alt="product"
             className="productimage2"
           />
@@ -113,7 +107,7 @@ export default function Text() {
 <div className="productimage3">
         <div>
           <img
-            src="image2/L-Glutathione.jpg"
+            src="public/image2/L-Glutathione.jpg"
             alt="product"
             className="productimage3"
           />
@@ -140,7 +134,7 @@ export default function Text() {
 <div className="productimage4">
         <div>
           <img
-            src="image2/Ginkgo biloba leaves.jpg"
+            src="public/image2/Ginkgo biloba leaves.jpg"
             alt="product"
             className="productimage4"
           />
@@ -169,7 +163,7 @@ export default function Text() {
 <div className="productimage5">
         <div>
           <img
-            src="image2/Vitamin B.jpg"
+            src="public/image2/Vitamin B.jpg"
             alt="product"
             className="productimage4"
           />
@@ -266,7 +260,7 @@ export default function Text() {
     <div className="productimage6">
         <div>
           <img
-            src="image2/calcium.jpg"
+            src="public/image2/calcium.jpg"
             alt="product"
             className="productimage4"
           />
@@ -286,7 +280,7 @@ export default function Text() {
 <p>วิตามินบี12 จำเป็นสำหรับการทำงานของเซลล์เม็ดเลือดขาว ซึ่งเป็นเซลล์ที่ทำหน้าที่ปกป้องร่างกายจากการติดเชื้อ</p>
 <p>วิตามินบี12 เป็นวิตามินที่ละลายในน้ำ ร่างกายไม่สามารถสังเคราะห์ได้เอง จึงจำเป็นต้องได้รับจากการรับประทานอาหารหรืออาหารเสริม</p>
 <p>แหล่งที่มา ได้แก่</p>
-<p> • อาหารจำพวกสัตว์ เช่น เนื้อสัตว์ ตับ ปลา ไข่ นม และผลิตภัณฑ์จากนม</p>
+<p>• อาหารจำพวกสัตว์ เช่น เนื้อสัตว์ ตับ ปลา ไข่ นม และผลิตภัณฑ์จากนม</p>
 
 
 </div>
@@ -300,16 +294,16 @@ export default function Text() {
         </div>
 
         <div className='font-family10'>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;กาแฟสำเร็จรูป 18-in-1</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% คอเลสเตอรอล </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% ไขมันทรานส์</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;รสชาติกลมกล่อม</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
+<p>กาแฟสำเร็จรูป 18-in-1</p>
+<p>หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
+<p>1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p>1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p>0% คอเลสเตอรอล </p>
+<p>0% ไขมันทรานส์</p>
+<p>ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
+<p>รสชาติกลมกล่อม</p>
+<p>มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
+<p>เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
 <p>เลขที่จดแจ้ง 13-2-02660-2-0091</p>
 </div>
 
@@ -320,21 +314,21 @@ export default function Text() {
 
     <div className="imagereview1">
       <img
-        src="image/review1.webp"
+        src="public/image/review1.webp"
         alt="imagereview1"
       />
     </div>
 
     <div className="imagereview2">
       <img
-        src="image/review2.webp"
+        src="public/image/review2.webp"
         alt="review2"
       />
     </div>
 
     <div className="imagereview3">
       <img
-        src="image/review3.webp"
+        src="public/image/review3.webp"
         alt="review3"
       />
     </div>
@@ -344,7 +338,7 @@ export default function Text() {
 
       <div className="imagereview4">
         <img
-          src="image/standards1.webp"
+          src="public/image/standards1.webp"
           alt="standards1"
         />
       </div>
@@ -352,19 +346,19 @@ export default function Text() {
 
       <div className="imagereview5">
         <img
-          src="image/standards2.webp"
+          src="public/image/standards2.webp"
           alt="standards2"
         />
       </div>
       <div className="imagereview6">
         <img
-          src="image/standards3.webp"
+          src="public/image/standards3.webp"
           alt="standards3"
         />
       </div>
       <div className="imagereview7">
         <img
-          src="image/standards4.webp"
+          src="public/image/standards4.webp"
           alt="standards4"
         />
       </div>
@@ -374,40 +368,25 @@ export default function Text() {
       </div>
       <div className="imagereview8">
         <img
-          src="image/factory1.webp"
+          src="public/image/factory1.webp"
           alt="factory1"
           className="promotion-img"
         />
       </div>
-
-      <div className="imagereview10">
-        <img
-          src="image/factory2.webp"
-          alt="factory1"
-          className="promotion-img"
-        />
-      </div>
-
-      <div className="imagereview11">
-        <img
-          src="image/factory3.webp"
-          alt="factory1"
-          className="promotion-img"
-        />
-      </div>
-
       <div className="imagereview9">
         <img
-          src="image/promotion.webp"
+          src="public/image/promotion.webp"
           alt="factory1"
           className="promotion-img"
         />
       </div>
       <div className="small-heading">
-          nano <span style={{ fontSize: '144px', color: '#710C04' }}>VA</span> 
+          nano <span style={{ fontSize: '80px', color: '#710C04' }}>VA</span> 
         </div>
 
      </div>
-    </>
+    
   );
-};
+}
+
+export default Text2;
