@@ -1,6 +1,6 @@
 // Text.jsx
 import React from 'react';
-import './Text.css'; // Import the CSS file
+import './text.css'; // Import the CSS file
 import { ImCross } from "react-icons/im";
 import Moneybutton from '../moneybutton/Moneybutton';
 
