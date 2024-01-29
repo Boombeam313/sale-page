@@ -9,6 +9,6 @@ const { orders, ordering } = require('../controllers/orderController')
 
 
 router.get('/get-orders', orders)
-router.post('/ordering', upload.single('file'), ordering)
+router.post('/add-order', upload.single('file'), ordering)
 
 module.exports = router
