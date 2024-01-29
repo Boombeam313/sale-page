@@ -6,20 +6,20 @@ const OrderSchema = new mongoose.Schema({
   customerPhone: { type: String, required: true },
   customerAddress: { type: String, required: true },
   shippingMethod: { type: String, required: true },
-  moneyTransferSlip: { type: String },
-  orderTotal: { type: Number, required: true },
-  products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+  // orderTotal: { type: Number, required: true },
+  productId: { type: String, required: true},
+  createAt: {type: Date, default: Date.now, required: true}
 });
 
 const Order = mongoose.model("Order", OrderSchema);
 
-const SilpBillSchema = new mongoose.Schema({
-    orderId: { type: mongoose.Schema.Types.ObjectId, ref: 'Order' },
-    timestamp: { type: Date, default: Date.now }, // Time stamp
-    image: Buffer // Image data buffer
-})
+const slipBillSchema = new mongoose.Schema({
+  orderId: { String }, // Link to User ID
+  image: Buffer,
+  createAt: { type: Date, default: Date.now, required: true}, // Time stamp
+});
 
-const SilpBill = mongoose.model('SilpBill', SilpBillSchema)
+const SilpBill = mongoose.model('SilpBill', slipBillSchema)
 
 module.exports = {
   Order,
