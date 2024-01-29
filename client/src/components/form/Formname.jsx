@@ -53,20 +53,20 @@ const Formname = () => {
       }
       // console.log('orderData', orderData)
       // Make a POST request to the server
-      const response = await axios.post('http://localhost:888/api/order/add-order', orderData, {
+      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/order/add-order`, orderData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      console.log('Server Response:', response.data);
+      // console.log('Server Response:', response.data);
       // alert('Order placed successfully!');
     } catch (error) {
       console.error('Error placing order:', error.response);
       // alert('Error placing order. Please try again.');
 
     }
-    alert("Order placed successfully!");
+    alert("Order Placed Successfully!");
 
     // โฟกัสที่ input ชื่อ-นามสกุล
     nameInputRef.current.focus();
@@ -108,7 +108,7 @@ const Formname = () => {
     }
     else {
       setSelectedFile(file)
-      console.log('set file in else', file)
+      // console.log('set file in else', file)
     }
   };
 
