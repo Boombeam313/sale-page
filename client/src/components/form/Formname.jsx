@@ -1,6 +1,6 @@
 // Formname.js
 
-import  { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import styles from './Form.module.css';
 import { FaLine, FaUpload, FaFile } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
@@ -28,7 +28,7 @@ const Formname = () => {
     setProdcutId(selectedProduct.id)
   };
 
-  const handleOrderButtonClick = async() => {
+  const handleOrderButtonClick = async () => {
     // แสดงข้อมูลที่ต้องการลงใน console
     try {
       if (!customerName || !customerPhone || !customerAddress || !selectedProduct) {
@@ -40,7 +40,7 @@ const Formname = () => {
       orderData.append('customerPhone', customerPhone);
       orderData.append('customerAddress', customerAddress);
       orderData.append('paymentMethod', paymentMethod);
-      orderData.append('productId', productId )
+      orderData.append('productId', productId)
       if (paymentMethod === 2) {
         if (!selectedFile) {
           // Display an alert if no file is attached
@@ -98,7 +98,7 @@ const Formname = () => {
       return;
     }
 
-    if (file.type !== 'image/jpeg' && file.type !== 'image/png'){
+    if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
       alert("กรุณาเลือกไฟล์ที่มีนามสกุล .jpg, .jpeg, หรือ .png เท่านั้น");
       // ล้างค่า selectedFile ในกรณีที่ไม่ใช่ไฟล์ที่ถูกต้อง
       setSelectedFile(null);
@@ -106,14 +106,12 @@ const Formname = () => {
       event.target.value = null;
       return
     }
-    else{
+    else {
       setSelectedFile(file)
       console.log('set file in else', file)
     }
-
-    
   };
-  
+
 
   const handleCopyButtonClick = () => {
     if (accountNumberRef.current) {
@@ -133,9 +131,9 @@ const Formname = () => {
   const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
     const handleSelect = () => {
       onSelect({ id, name, price, isSelected: !isSelected });
-      
+
     };
-  
+
     return (
       <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
         <img className="product-image" src={imageSrc} alt={name} />
@@ -148,9 +146,9 @@ const Formname = () => {
   const renderBankAccountDetails = () => {
     if (paymentMethod === 2) {
       return (
-        
+
         <div className={styles.bankAccountDetails}>
-          
+
           <p>กรุณาโอนเงินไปที่บัญชีธนาคาร</p>
           <table className={styles.bankAccountTable}>
             <tbody>
@@ -207,115 +205,115 @@ const Formname = () => {
   return (
 
     <>
- <div>
-      <div className="product-container">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            imageSrc={product.imageSrc}
-            price={product.price}
-            onSelect={handleProductSelect}
-            isSelected={selectedProduct && selectedProduct.id === product.id}
-          />
-        ))}
-      </div>
       <div>
-        <p className='productname'>สินค้าที่เลือก</p>
-        {selectedProduct ? (
-          <div className="selected-product-table">
-            <div className="table-row">
-              <div className="table-cell">ชื่อ:</div>
-              <div className="table-cell">{selectedProduct.name}</div>
+        <div className="product-container">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              imageSrc={product.imageSrc}
+              price={product.price}
+              onSelect={handleProductSelect}
+              isSelected={selectedProduct && selectedProduct.id === product.id}
+            />
+          ))}
+        </div>
+        <div>
+          <p className='productname'>สินค้าที่เลือก</p>
+          {selectedProduct ? (
+            <div className="selected-product-table">
+              <div className="table-row">
+                <div className="table-cell">ชื่อ:</div>
+                <div className="table-cell">{selectedProduct.name}</div>
+              </div>
+              <div className="table-row">
+                <div className="table-cell">ราคา:</div>
+                <div className="table-cell">{selectedProduct.price}</div>
+              </div>
             </div>
-            <div className="table-row">
-              <div className="table-cell">ราคา:</div>
-              <div className="table-cell">{selectedProduct.price}</div>
-            </div>
-          </div>
-        ) : (
-          <p>ยังไม่มีสินค้าที่เลือก</p>
-        )}
-      </div>
-    </div>
-    
-    <div>
-      <div className={styles.nameinput}>
-        <input
-          type="text"
-          id="name"
-          placeholder="ชื่อ-นามสกุล"
-          value={customerName}
-          onChange={(event) => setCustomerName(event.target.value)}
-          ref={nameInputRef}
-          />
-      </div>
-      <div className={styles.phoneinput}>
-        <input
-          type="text"
-          id="phone"
-          placeholder="เบอร์โทร"
-          value={customerPhone}
-          onChange={handlePhoneChange}
-        />
-      </div>
-      <div className={styles.addresstextarea}>
-        <textarea
-          id="address"
-          placeholder="กรุณากรอกที่อยู่จัดส่งสินค้า"
-          value={customerAddress}
-          onChange={(event) => setCustomerAddress(event.target.value)}
-          />
-      </div>
-
-      <div className={styles.checkboxcollectngin}>
-        <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
-          <Radio value={1}>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เก็บเงินปลายทาง   &nbsp; <FaTruckFast />
-          </Radio>
-        </Radio.Group>
-      </div>
-
-      <div className={styles.checkboxcollectngin}>
-        <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
-          <Radio value={2}>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; โอนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <FaRegCreditCard />
-          </Radio>
-        </Radio.Group>
-      </div>
-
-      {renderBankAccountDetails()}
-      <div className={styles.ConfirmButton}>
-        <button onClick={handleOrderButtonClick}>ยืนยันคำสั่งซื้อ</button>
-      </div>
-
-      <div className={styles.buttonContainer}>
-        <div className={styles.buttonGroup}>
-          <a
-            href="https://page.line.me/579vamkm?openQrModal=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.questionButton}
-            >
-            <FaLine  size={30}/> สอบถาม
-          </a>
-          <button
-            className={styles.callButton}
-            onClick={handleCallButtonClick}
-            >
-            <IoCall size={30}/> โทร
-          </button>
-          <button
-            className={styles.orderButton}
-            onClick={handleOrderButtonClick}
-            >
-            <TiShoppingCart size={30}/> สั่งซื้อ
-          </button>
+          ) : (
+            <p>ยังไม่มีสินค้าที่เลือก</p>
+          )}
         </div>
       </div>
-    </div>
-            </>
+
+      <div>
+        <div className={styles.nameinput}>
+          <input
+            type="text"
+            id="name"
+            placeholder="ชื่อ-นามสกุล"
+            value={customerName}
+            onChange={(event) => setCustomerName(event.target.value)}
+            ref={nameInputRef}
+          />
+        </div>
+        <div className={styles.phoneinput}>
+          <input
+            type="text"
+            id="phone"
+            placeholder="เบอร์โทร"
+            value={customerPhone}
+            onChange={handlePhoneChange}
+          />
+        </div>
+        <div className={styles.addresstextarea}>
+          <textarea
+            id="address"
+            placeholder="กรุณากรอกที่อยู่จัดส่งสินค้า"
+            value={customerAddress}
+            onChange={(event) => setCustomerAddress(event.target.value)}
+          />
+        </div>
+
+        <div className={styles.checkboxcollectngin}>
+          <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
+            <Radio value={1}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เก็บเงินปลายทาง   &nbsp; <FaTruckFast />
+            </Radio>
+          </Radio.Group>
+        </div>
+
+        <div className={styles.checkboxcollectngin}>
+          <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
+            <Radio value={2}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; โอนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <FaRegCreditCard />
+            </Radio>
+          </Radio.Group>
+        </div>
+
+        {renderBankAccountDetails()}
+        <div className={styles.ConfirmButton}>
+          <button onClick={handleOrderButtonClick}>ยืนยันคำสั่งซื้อ</button>
+        </div>
+
+        <div className={styles.buttonContainer}>
+          <div className={styles.buttonGroup}>
+            <a
+              href="https://page.line.me/579vamkm?openQrModal=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.questionButton}
+            >
+              <FaLine size={30} /> สอบถาม
+            </a>
+            <button
+              className={styles.callButton}
+              onClick={handleCallButtonClick}
+            >
+              <IoCall size={30} /> โทร
+            </button>
+            <button
+              className={styles.orderButton}
+              onClick={handleOrderButtonClick}
+            >
+              <TiShoppingCart size={30} /> สั่งซื้อ
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
