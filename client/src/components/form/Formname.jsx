@@ -1,12 +1,12 @@
-// Formname.js
 
-import React, { useState, useRef } from "react";
+import  { useState, useRef } from "react";
 import styles from './Form.module.css';
 import { FaLine, FaUpload, FaFile } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
 import { FaTruckFast, FaRegCreditCard, FaCopy } from "react-icons/fa6";
 import { Radio } from 'antd';
+import axios from 'axios'
 
 const Formname = () => {
   const [address, setAddress] = useState("");
@@ -17,22 +17,33 @@ const Formname = () => {
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
-  const handleOrderButtonClick = () => {
-    // แสดงข้อมูลที่ต้องการลงใน console
-    console.log("ชื่อ-นามสกุล:", name);
-    console.log("เบอร์โทร:", phone);
-    console.log("ที่อยู่จัดส่ง:", address);
-    console.log("วิธีการชำระเงิน:", paymentMethod);
-    if (paymentMethod === 2) {
-      console.log("เลขบัญชีธนาคาร (ถ้าเลือกโอนเงิน):", accountNumberRef.current.value);
-      console.log("ไฟล์ที่อัปโหลด (ถ้าเลือกโอนเงิน):", selectedFile ? selectedFile.name : "ไม่มีไฟล์ที่อัปโหลด");
+  const handleOrderButtonClick = async () => {
+    try {
+      const orderData = new FormData();
+      orderData.append('name', name);
+      orderData.append('phone', phone);
+      orderData.append('address', address);
+      orderData.append('paymentMethod', paymentMethod);
+      if (paymentMethod === 2) {
+        orderData.append('accountNumber', accountNumberRef);
+      }
+      if (selectedFile) {
+        orderData.append('file', selectedFile);
+      }
+
+      // Make a POST request to the server
+      const response = await axios.post('http://localhost:888/api/order/ordering', orderData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log('Server Response:', response.data);
+      alert('Order placed successfully!');
+    } catch (error) {
+      console.error('Error placing order:', error);
+      alert('Error placing order. Please try again.');
     }
-
-    // แสดง alert
-    alert("Order placed successfully!");
-
-    // โฟกัสที่ input ชื่อ-นามสกุล
-    nameInputRef.current.focus();
   };
 
   const handleCallButtonClick = () => {
