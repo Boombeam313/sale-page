@@ -11,20 +11,20 @@ const orders = async (req, res) => {
   }
 };
 
-const ordering = async (req, res) => {
+const add_order = async (req, res) => {
   try {
     const data = req.body;
     console.log("Received Order Data:", data);
     console.log(req.body.customerName);
     
     const file = req.file;
-    const shippingMethod = req.body.shippingMethod
+    const paymentMethod = req.body.paymentMethod
     const customerName = req.body.customerName
     const customerAddress = req.body.customerAddress
     const customerPhone = req.body.customerPhone
+    const productId = req.body.productId
     
     
-    console.log("Received File Data:", file);
 
       const generateOrderId = () => {
         const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
@@ -34,11 +34,10 @@ const ordering = async (req, res) => {
         return `${randomBase36}${timestampBase36}`;
       };
 
-      const productId = 'This is product ID'
 
       /// The end of way
 
-      if (shippingMethod === '1' && !file){
+      if (paymentMethod === '1' && !file){
         console.log('shipping 1')
 
       const genOrderId = generateOrderId().toString()
@@ -47,7 +46,7 @@ const ordering = async (req, res) => {
         customerName,
         customerPhone,
         customerAddress,
-        shippingMethod,
+        paymentMethod,
         productId,
         createAt: Date.now()
       })
@@ -55,15 +54,17 @@ const ordering = async (req, res) => {
       res.json(newOrderShipping)
     }
     /// Credits
-    else if (shippingMethod === '2' && file){
+    else if (paymentMethod === '2' && file){
       console.log('shipping 2')
+      console.log("Received File Data:", file);
 
+      console.log('file mimetype', file.mimetype)
 
       if (file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png') {
         res.status(400).send('Invalid file format. Only JPEG and PNG images are allowed.');
         return; /// return out of this function 
       }
-      
+
       const fileBuffer = file.buffer
       const genOrderId = generateOrderId().toString()
       const newOrderCredits = new Order({
@@ -71,7 +72,7 @@ const ordering = async (req, res) => {
         customerName,
         customerPhone,
         customerAddress,
-        shippingMethod,
+        paymentMethod,
         productId,
         createAt: Date.now()
       })
@@ -89,6 +90,7 @@ const ordering = async (req, res) => {
         newOrderCredits,
         newSlipBill
       })
+      
     }
     else{
       res.status(500).send('Missing file or shippingMethod wrong')
@@ -102,5 +104,5 @@ const ordering = async (req, res) => {
 
 module.exports = {
   orders,
-  ordering,
+  add_order,
 };

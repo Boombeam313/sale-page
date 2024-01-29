@@ -5,8 +5,7 @@ const OrderSchema = new mongoose.Schema({
   customerName: { type: String, required: true },
   customerPhone: { type: String, required: true },
   customerAddress: { type: String, required: true },
-  shippingMethod: { type: String, required: true },
-  // orderTotal: { type: Number, required: true },
+  paymentMethod: { type: String, required: true },
   productId: { type: String, required: true},
   createAt: {type: Date, default: Date.now, required: true}
 });
@@ -14,7 +13,7 @@ const OrderSchema = new mongoose.Schema({
 const Order = mongoose.model("Order", OrderSchema);
 
 const slipBillSchema = new mongoose.Schema({
-  orderId: { String }, // Link to User ID
+  orderId:  String , // Link to User ID
   image: Buffer,
   createAt: { type: Date, default: Date.now, required: true}, // Time stamp
 });
