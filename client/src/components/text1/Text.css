@@ -1,4 +1,520 @@
 
+/* วิดีโอ 1 */
+.convideo video {
+  width: 80%;
+  height: auto;
+  max-width: 1200px;
+  margin: 20px auto;  /* ปรับ syntax และเพิ่ม px */
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* หมดเงิน */
+.product-promotion-container {
+
+    max-width: 80%;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 5px;
+    text-align: center; 
+  }
+
+  .title {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 280px;
+    margin-right: 280px;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+  
+  
+
+.font-family1 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+/* พอกันที */
+.producttext2 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.producttext2 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.producttext3 {
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+}
+
+/*ที่ต้องเสีย*/
+.producttext4 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.producttext4 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.producttext5 {
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+}
+
+.productimage{
+  width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+    text-align: center; 
+}
+.producttext6 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.producttext7 {
+  text-align: center;
+  font-size:130px;
+  font-family: 'Kanit';
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.producttext8 {
+  text-align: center;
+  font-size:100px;
+  font-family: 'Kanit';
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+/* วิดีโอ 2 */
+.con2video video {
+  width: 80%;
+  height: auto;
+  max-width: 1200px;
+  margin: 20px auto;  /* ปรับ syntax และเพิ่ม px */
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.productimage{
+  width: 80%;
+  
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.font-family {
+  font-size: 30px;
+  font-family: 'Kanit', sans-serif;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  margin-right: 120px;
+  font-weight: bold;
+
+}
+.productimage2 {
+    width: 80%;
+   height: auto;
+    margin: 0 auto; 
+}
+
+.title2 {
+    font-size: 40px;
+    font-family: 'Kanit';
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.font-family2 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.title3 {
+  font-size: 40px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+
+.font-family3 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.productimage3 {
+  width: 80%;
+  margin: 0 auto; 
+}
+
+
+.font-family4 {
+  font-size: 30px;
+  font-family: 'Kanit', sans-serif;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+.productimage4{
+  width: 80%;
+  margin: 0 auto;
+}
+.title4 {
+  font-size: 40px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.font-family5 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.productimage5{
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.title5 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+
+.font-family6 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.title6 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+.font-family7 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.title7 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.font-family8 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.title8 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.productimage6{
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.title9 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.font-family9 {
+  font-size: 20px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.nanovatext{
+  font-size: 87px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .nanovatext2{
+    font-size: 49px;
+      font-family: 'Kanit';
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .font-family10 {
+      font-size: 24px;
+      font-family: 'Kanit';
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 10px;
+      
+    }
+
+    .review-heading{
+    text-align: center;
+    font-Size: 140px;
+    font-weight: bold;
+    }
+    .imagereview1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    
+    .imagereview1 img {
+      width: 80%; 
+      margin: 0 auto;
+      height: auto;
+      margin-bottom: 10px;
+      
+      
+    }
+
+    .imagereview2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview2 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .imagereview3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview3 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .review-heading2{
+      font-Size: 10px;
+      font-weight: bold;
+      }
+
+      .Testtheproduct{
+        text-align: center;
+        font-Size: 120px;
+        font-weight: bold;
+        
+        }
+
+        .imagereview4 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+        }
+
+        .imagereview4 img {
+          width: 40%; 
+          height: auto;
+          margin-top: 50px;
+        }
+
+        .imagereview5 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+        }
+
+        .imagereview5 img {
+          width: 50%; 
+          height: auto;
+          max-width: 100%; 
+          margin-top: 50px;
+        }
+
+        .imagereview6 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+        }
+
+        .imagereview6 img {
+          width: 50%; 
+          height: auto;
+          max-width: 100%; 
+          margin-top: 50px;
+        }
+
+        .imagereview7 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+        }
+
+        .imagereview7 img {
+          width: 50%; 
+          height: auto;
+          max-width: 100%; 
+          margin-top: 50px;
+        }
+
+        .Testtheproduct2{
+          text-align: center;
+          font-Size: 50px;
+          font-weight: bold;
+          }
+
+          .imagereview8 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+          }
+
+          .imagereview8 img {
+            width: 80%; 
+            height: auto;
+            max-width: 100%; 
+            margin-top: 50px;
+          }
+
+          .imagereview9 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+          }
+
+          .imagereview9 img {
+            width: 80%; 
+            height: auto;
+            max-width: 100%; 
+            margin-top: 50px;
+          }
+
+          .imagereview10 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+          }
+
+          .imagereview10 img {
+            width: 80%; 
+            height: auto;
+            max-width: 100%; 
+            margin-top: 50px;
+          }
+
+          .imagereview11 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+          }
+          .imagereview11 img {
+            width: 80%; 
+            height: auto;
+            max-width: 100%; 
+            margin-top: 50px;
+          }
+
+
+
+
 
 .image-container {
     margin-bottom: 20px;
@@ -7,10 +523,10 @@
   .image {
     max-width: 80%;
     height: auto;
-    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    margin: 5px auto; 
     display: block;
   }
-  /* TextStyles.css */
+  
 
 .title {
     font-size: 40px;
@@ -31,7 +547,7 @@
   .image {
     max-width: 80%;
     height: auto;
-    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    margin: 5px auto;
     display: block;
   }
   
@@ -58,8 +574,8 @@
   .last-image {
     max-width: 80%;
     height: auto;
-    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
-    display: block; /* Ensures that the image behaves as a block-level element */
+    margin: 5px auto; 
+    display: block; 
 }
 
   
@@ -74,7 +590,6 @@
 
 
 
-  /*2 */
 
 .additional-title {
     font-size: 40px;
@@ -88,7 +603,7 @@
   .additional-image {
     max-width: 80%;
     height: auto;
-    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    margin: 5px auto; 
     display: block;
   }
   
@@ -103,7 +618,7 @@
   
   
 
-  /* 3 */
+  
 
 .additional-title {
     font-size: 40px;
@@ -130,7 +645,7 @@
   }
   
 
-  /* 4 */
+
 
 .additional-content-container {
     font-size: 40px;
@@ -164,7 +679,7 @@
   
 
 
-  /* 5 */
+  
 
 .additional-content-container {
     font-size: 40px;
@@ -195,7 +710,7 @@
     margin-bottom: 5px;
   }
   
-  /* 6 */
+ 
 
 .product-promotion-container {
     font-size: 20px;
@@ -205,10 +720,13 @@
   }
   
   .product-promotion-title {
+    text-align: center;
+    margin: 0 auto;
     font-size: 50px;
     font-family: 'Kanit';
     margin-bottom: 20px;
     color: black;
+    font-weight: bold;
   }
   
   .product-promotion-subtitle {
@@ -226,11 +744,11 @@
   }
   
   .product-promotion-image {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 5px;
   }
-  /* NanoVACoffeeStyles.css */
+  
 
 .nano-va-coffee-container {
     margin-bottom: 5px;
@@ -239,7 +757,7 @@
   .nano-va-coffee-image {
     max-width: 80%;
     height: auto;
-    margin: 5px auto; /* Set margin-top and margin-bottom to 5px, and margin-left and margin-right to auto */
+    margin: 5px auto;
     display: block;
   }
   
@@ -270,7 +788,6 @@
     font-weight: bold;
   }
   
-/* styles.css */
 
 .section-container {
     font-size: 20px;
@@ -295,7 +812,7 @@
     height: auto;
   }
   
-  /* styles.css */
+ 
 
 .main-container {
     font-size: 20px;
@@ -320,8 +837,7 @@
     height: auto;
   }
 
-  /* end */
-
+  
 .container {
     font-size: 20px;
     font-family: 'Kanit';
@@ -346,7 +862,8 @@
   }
   
   .small-heading {
-    font-size: 80px;
+    text-align: center;
+    font-size: 144px;
     font-family: 'Kanit';
     color: black;
     margin-bottom: 20px;
