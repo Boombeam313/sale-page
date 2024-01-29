@@ -1,15 +1,29 @@
 .app {
   display: flex;
   padding: 10px;
-  height: 100vh; /* ให้ความสูงของ container เท่ากับความสูงของหน้าจอ */
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .left-panel, .right-panel, .center-panel {
-  flex: 1; /* ส่วนแรกและส่วนสุดท้ายจะมี flex 1 (20% ของหน้าจอ) */
+  flex: 1;
 }
 
 .center-panel {
-  flex: 3; /* ส่วนกลางจะมี flex 3 (60% ของหน้าจอ) */
+  flex: 3;
 }
 
 /* เพิ่มสไตล์อื่น ๆ ตามต้องการ */
+
+/* Media queries สำหรับปรับขนาดที่ต่างกันขึ้นอยู่กับขนาดหน้าจอ */
+@media screen and (max-width: 768px) {
+  .app {
+    flex-direction: column; /* เมื่อหน้าจอเล็กกว่าหรือเท่ากับ 768px ให้แสดงเป็นคอลัมน์ */
+  }
+
+  .left-panel, .right-panel, .center-panel {
+    flex: auto; /* ปรับ flex เป็น auto เพื่อให้ขยายตามขนาดของ container */
+  }
+}
+
+/* เพิ่ม media queries เพิ่มเติมตามต้องการ */

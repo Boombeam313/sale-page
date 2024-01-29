@@ -247,13 +247,13 @@ const Formname = () => {
             rel="noopener noreferrer"
             className={styles.questionButton}
             >
-            <FaLine  size={30}/> สอบถาม
+            <FaLine  size={30}/> &nbsp;LINE
           </a>
           <button
             className={styles.callButton}
             onClick={handleCallButtonClick}
             >
-            <IoCall size={30}/> โทร
+            <IoCall size={30}/> &nbsp;โทร
           </button>
           <button
             className={styles.orderButton}
