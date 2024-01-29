@@ -31,6 +31,10 @@ const Formname = () => {
   const handleOrderButtonClick = async() => {
     // แสดงข้อมูลที่ต้องการลงใน console
     try {
+      if (!customerName || !customerPhone || !customerAddress || !selectedProduct) {
+        alert("กรุณากรอกข้อมูลทุกช่อง");
+        return; // Do not proceed with the order if any required field is missing
+      }
       const orderData = new FormData();
       orderData.append('customerName', customerName);
       orderData.append('customerPhone', customerPhone);
@@ -38,7 +42,11 @@ const Formname = () => {
       orderData.append('paymentMethod', paymentMethod);
       orderData.append('productId', productId )
       if (paymentMethod === 2) {
-        orderData.append('accountNumber', accountNumberRef);
+        if (!selectedFile) {
+          // Display an alert if no file is attached
+          alert("กรุณาแนบไฟล์หลักฐานการโอนเงิน");
+          return; // Do not proceed with the order
+        }
       }
       if (selectedFile) {
         orderData.append('file', selectedFile);
@@ -83,10 +91,29 @@ const Formname = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setSelectedFile(file);
-    console.log('file', file
-    ) 
+
+    if (!file) {
+      // Handle the case where no file is selected
+      setSelectedFile(null);
+      return;
+    }
+
+    if (file.type !== 'image/jpeg' && file.type !== 'image/png'){
+      alert("กรุณาเลือกไฟล์ที่มีนามสกุล .jpg, .jpeg, หรือ .png เท่านั้น");
+      // ล้างค่า selectedFile ในกรณีที่ไม่ใช่ไฟล์ที่ถูกต้อง
+      setSelectedFile(null);
+      // ล้างค่า input file
+      event.target.value = null;
+      return
+    }
+    else{
+      setSelectedFile(file)
+      console.log('set file in else', file)
+    }
+
+    
   };
+  
 
   const handleCopyButtonClick = () => {
     if (accountNumberRef.current) {
