@@ -1,3 +1,4 @@
+// Formname.js
 
 import  { useState, useRef } from "react";
 import styles from './Form.module.css';
@@ -7,6 +8,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaTruckFast, FaRegCreditCard, FaCopy } from "react-icons/fa6";
 import { Radio } from 'antd';
 import axios from 'axios'
+
 
 
 const Formname = () => {
@@ -82,7 +84,8 @@ const Formname = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
-    console.log('file', file.type) 
+    console.log('file', file
+    ) 
   };
 
   const handleCopyButtonClick = () => {
@@ -154,7 +157,7 @@ const Formname = () => {
                     <input
                       type="file"
                       id="fileInput"
-                      accept=".jpg, .jpeg, .png,"
+                      accept=".jpg, .jpeg, .png, .gif"
                       onChange={handleFileChange}
                       style={{ display: "none" }}
                     />

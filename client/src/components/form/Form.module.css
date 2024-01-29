@@ -88,7 +88,7 @@
   
   .questionButton {
     width: 250px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     border-radius: 5px;
@@ -112,7 +112,7 @@
   
   .callButton {
     width: 250px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     border-radius: 5px;
@@ -131,7 +131,7 @@
   
   .orderButton {
     width: 250px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     border-radius: 5px;

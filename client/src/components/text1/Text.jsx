@@ -292,11 +292,11 @@ export default function Text() {
 </div>
  
     <div className="nanovatext">
-          nano <span style={{ color: '#710C04' }}>VA</span> <span style={{ color: 'black' }}>cofee</span>
+          nano<span style={{ color: '#710C04' }}>VA</span> <span style={{ color: 'black' }}>coffee</span>
         </div>
 
     <div className="nanovatext2">
-          กาแฟ นาโนวา <span className="nano-va-coffee-tagline"></span>
+          กาแฟนาโนวา <span className="nano-va-coffee-tagline"></span>
         </div>
 
         <div className='font-family10'>
