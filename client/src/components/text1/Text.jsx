@@ -1,60 +1,98 @@
-// Text.jsx
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './text.css'; // Import the CSS file
 import { ImCross } from "react-icons/im";
 import Moneybutton from '../moneybutton/Moneybutton';
 
 export default function Text() {
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersection1 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 1 is in view, play
+          videoRef1.current.play();
+        } else {
+          // Video 1 is out of view, pause
+          videoRef1.current.pause();
+        }
+      });
+    };
+
+    const handleIntersection2 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 2 is in view, play
+          videoRef2.current.play();
+        } else {
+          // Video 2 is out of view, pause
+          videoRef2.current.pause();
+        }
+      });
+    };
+
+    const observer1 = new IntersectionObserver(handleIntersection1, options);
+    const observer2 = new IntersectionObserver(handleIntersection2, options);
+
+    observer1.observe(videoRef1.current);
+    observer2.observe(videoRef2.current);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+    };
+  }, [videoRef1, videoRef2]);
+
   return (
     <>
-       <div>
-      <div className="convideo">
-        <video
-          controls
-          autoPlay
-          src="video/ปัญหา.mp4"
-        />
-      </div>
-
-      <div className="product-promotion-title">
-        หมดเงิน หลายหมื่น แถม <span className="product-promotion-subtitle">ไม่เห็นผล</span>
-      </div>
-
-      <div className="producttext2">
-        พอกันทีกับการ เสียเงิน เสียเวลา ไปกับการ <span className="producttext3">ดูแลผิวและควบคุมน้ำหนัก</span>
-      </div>
-
-      <div className="producttext4">
-        ที่ต้องเสียเงินไปอย่างสิ้นเปลือง ให้ <span className="producttext5">nanoVA</span><span className="producttext6">ช่วยดูแลคุณ แค่ดื่มวันละ 1 - 2 แก้ว</span>
-      </div>
-
-      <Moneybutton  />
-
-      <div className="producttext7">
-        สารสกัด <span className="producttext5"></span>
-      </div>
-
-      <div className="producttext8">
-        ของผลิตภัณฑ์ <span className="producttext5"></span>
-      </div>
-
-      <div className="product-promotion-container">
-        <div>
-          <img
-            src="image/product1.webp"
-            alt="product"
-            className="product-promotion-image"
-          />
+      <div>
+        <div className="convideo">
+        <video autoPlay muted ref={videoRef1} src="video/ปัญหา.mp4" />
         </div>
-      </div>
 
-      <div className="con2video">
-        <video
-          controls
-          autoPlay
-          src="video/nanoVA1.mp4"
-        />
-      </div>
+        <div className="product-promotion-title">
+          หมดเงิน หลายหมื่น แถม <span className="product-promotion-subtitle">ไม่เห็นผล</span>
+        </div>
+
+        <div className="producttext2">
+          พอกันทีกับการ เสียเงิน เสียเวลา ไปกับการ <span className="producttext3">ดูแลผิวและควบคุมน้ำหนัก</span>
+        </div>
+
+        <div className="producttext4">
+          ที่ต้องเสียเงินไปอย่างสิ้นเปลือง ให้ <span className="producttext5">nanoVA</span><span className="producttext6">ช่วยดูแลคุณ แค่ดื่มวันละ 1 - 2 แก้ว</span>
+        </div>
+
+        <Moneybutton />
+
+        <div className="producttext7">
+          สารสกัด <span className="producttext5"></span>
+        </div>
+
+        <div className="producttext8">
+          ของผลิตภัณฑ์ <span className="producttext5"></span>
+        </div>
+
+        <div className="product-promotion-container">
+          <div>
+            <img
+              src="image/product1.webp"
+              alt="product"
+              className="product-promotion-image"
+            />
+          </div>
+        </div>
+
+        <div className="con2video">
+          <video autoPlay muted ref={videoRef2} src="video/nanoVA1.mp4" />
+        </div>
+
 
       <div className="productimage">
         <div>
