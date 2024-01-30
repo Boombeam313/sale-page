@@ -1,5 +1,4 @@
 // Formname.js
-
 import { useState, useRef } from "react";
 import styles from './Form.module.css';
 import { FaLine, FaUpload, FaFile } from "react-icons/fa";
@@ -296,7 +295,7 @@ const Formname = () => {
               rel="noopener noreferrer"
               className={styles.questionButton}
             >
-              <FaLine size={30} /> สอบถาม
+              <FaLine size={30} /> LINE
             </a>
             <button
               className={styles.callButton}
