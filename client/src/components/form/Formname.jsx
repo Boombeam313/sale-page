@@ -1,31 +1,23 @@
-import React, { useState, useRef } from "react";
+// Formname.js
+
+import { useState, useRef } from "react";
 import styles from './Form.module.css';
 import { FaLine, FaUpload, FaFile } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
 import { FaTruckFast, FaRegCreditCard, FaCopy } from "react-icons/fa6";
 import { Radio } from 'antd';
+import axios from 'axios'
 
-const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
-  const handleSelect = () => {
-    onSelect({ id, name, price, isSelected: !isSelected });
-  };
 
-  return (
-    <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
-      <img className="product-image" src={imageSrc} alt={name} />
-      <p>{name}</p>
-      <p>{price}</p>
-    </div>
-  );
-};
 
 const Formname = () => {
-  const [address, setAddress] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [customerAddress, setCustomerAddress] = useState("");
+  const [customerName, setCustomerName] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState(1);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [productId, setProdcutId] = useState('')
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
@@ -33,35 +25,48 @@ const Formname = () => {
 
   const handleProductSelect = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
+    setProdcutId(selectedProduct.id)
   };
 
-  const handleOrderButtonClick = () => {
-    if (!name || !phone || !address || !selectedProduct) {
-      alert("กรุณากรอกข้อมูลทุกช่อง");
-      return; // Do not proceed with the order if any required field is missing
-    }
+  const handleOrderButtonClick = async () => {
     // แสดงข้อมูลที่ต้องการลงใน console
-    if (paymentMethod === 2) {
-      if (!selectedFile) {
-        // Display an alert if no file is attached
-        alert("กรุณาแนบไฟล์หลักฐานการโอนเงิน");
-        return; // Do not proceed with the order
+    try {
+      if (!customerName || !customerPhone || !customerAddress || !selectedProduct) {
+        alert("กรุณากรอกข้อมูลทุกช่อง");
+        return; // Do not proceed with the order if any required field is missing
       }
-      console.log("ไฟล์ที่อัปโหลด:", selectedFile.name);
-      console.log("เลขบัญชีธนาคาร:", accountNumberRef.current.value);
-    }
-    console.log("ชื่อ-นามสกุล:", name);
-    console.log("เบอร์โทร:", phone);
-    console.log("ที่อยู่จัดส่ง:", address);
-    console.log("วิธีการชำระเงิน:", paymentMethod);
-    console.log('selected pro', selectedProduct )
-    if (paymentMethod === 2) {
-      console.log("เลขบัญชีธนาคาร (ถ้าเลือกโอนเงิน):", accountNumberRef.current.value);
-      console.log("ไฟล์ที่อัปโหลด (ถ้าเลือกโอนเงิน):", selectedFile ? selectedFile.name : "ไม่มีไฟล์ที่อัปโหลด");
-    }
+      const orderData = new FormData();
+      orderData.append('customerName', customerName);
+      orderData.append('customerPhone', customerPhone);
+      orderData.append('customerAddress', customerAddress);
+      orderData.append('paymentMethod', paymentMethod);
+      orderData.append('productId', productId)
+      if (paymentMethod === 2) {
+        if (!selectedFile) {
+          // Display an alert if no file is attached
+          alert("กรุณาแนบไฟล์หลักฐานการโอนเงิน");
+          return; // Do not proceed with the order
+        }
+      }
+      if (selectedFile) {
+        orderData.append('file', selectedFile);
+      }
+      // console.log('orderData', orderData)
+      // Make a POST request to the server
+      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/order/add-order`, orderData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
-    // แสดง alert
-    alert("Order placed successfully!");
+      // console.log('Server Response:', response.data);
+      // alert('Order placed successfully!');
+    } catch (error) {
+      console.error('Error placing order:', error.response);
+      // alert('Error placing order. Please try again.');
+
+    }
+    alert("Order Placed Successfully!");
 
     // โฟกัสที่ input ชื่อ-นามสกุล
     nameInputRef.current.focus();
@@ -76,7 +81,7 @@ const Formname = () => {
   const handlePhoneChange = (event) => {
     const input = event.target.value;
     if (/^\d+$/.test(input) || input === "") {
-      setPhone(input);
+      setCustomerPhone(input);
     }
   };
 
@@ -87,19 +92,26 @@ const Formname = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
-    // ตรวจสอบนามสกุลของไฟล์
-    const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    if (!file) {
+      // Handle the case where no file is selected
+      setSelectedFile(null);
+      return;
+    }
 
-    if (allowedExtensions.test(file.name)) {
-      setSelectedFile(file);
-    } else {
+    if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
       alert("กรุณาเลือกไฟล์ที่มีนามสกุล .jpg, .jpeg, หรือ .png เท่านั้น");
       // ล้างค่า selectedFile ในกรณีที่ไม่ใช่ไฟล์ที่ถูกต้อง
       setSelectedFile(null);
       // ล้างค่า input file
       event.target.value = null;
+      return
+    }
+    else {
+      setSelectedFile(file)
+      // console.log('set file in else', file)
     }
   };
+
 
   const handleCopyButtonClick = () => {
     if (accountNumberRef.current) {
@@ -116,10 +128,27 @@ const Formname = () => {
     // Add more products as needed
   ];
 
+  const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
+    const handleSelect = () => {
+      onSelect({ id, name, price, isSelected: !isSelected });
+
+    };
+
+    return (
+      <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
+        <img className="product-image" src={imageSrc} alt={name} />
+        <p>{name}</p>
+        <p>{price}</p>
+      </div>
+    );
+  };
+
   const renderBankAccountDetails = () => {
     if (paymentMethod === 2) {
       return (
+
         <div className={styles.bankAccountDetails}>
+
           <p>กรุณาโอนเงินไปที่บัญชีธนาคาร</p>
           <table className={styles.bankAccountTable}>
             <tbody>
@@ -153,7 +182,7 @@ const Formname = () => {
                     <input
                       type="file"
                       id="fileInput"
-                      accept=".jpg, .jpeg, .png"
+                      accept=".jpg, .jpeg, .png, .gif"
                       onChange={handleFileChange}
                       style={{ display: "none" }}
                     />
@@ -174,6 +203,7 @@ const Formname = () => {
   };
 
   return (
+
     <>
       <div>
         <div className="product-container">
@@ -207,15 +237,15 @@ const Formname = () => {
           )}
         </div>
       </div>
-    
+
       <div>
         <div className={styles.nameinput}>
           <input
             type="text"
             id="name"
             placeholder="ชื่อ-นามสกุล"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={customerName}
+            onChange={(event) => setCustomerName(event.target.value)}
             ref={nameInputRef}
           />
         </div>
@@ -224,7 +254,7 @@ const Formname = () => {
             type="text"
             id="phone"
             placeholder="เบอร์โทร"
-            value={phone}
+            value={customerPhone}
             onChange={handlePhoneChange}
           />
         </div>
@@ -232,8 +262,8 @@ const Formname = () => {
           <textarea
             id="address"
             placeholder="กรุณากรอกที่อยู่จัดส่งสินค้า"
-            value={address}
-            onChange={(event) => setAddress(event.target.value)}
+            value={customerAddress}
+            onChange={(event) => setCustomerAddress(event.target.value)}
           />
         </div>
 
@@ -248,7 +278,7 @@ const Formname = () => {
         <div className={styles.checkboxcollectngin}>
           <Radio.Group onChange={handlePaymentMethodChange} value={paymentMethod}>
             <Radio value={2}>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; โอนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <FaRegCreditCard />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; โอนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <FaRegCreditCard />
             </Radio>
           </Radio.Group>
         </div>
@@ -266,19 +296,19 @@ const Formname = () => {
               rel="noopener noreferrer"
               className={styles.questionButton}
             >
-              <FaLine  size={30}/> &nbsp;LINE
+              <FaLine size={30} /> สอบถาม
             </a>
             <button
               className={styles.callButton}
               onClick={handleCallButtonClick}
             >
-              <IoCall size={30}/> &nbsp;โทร
+              <IoCall size={30} /> โทร
             </button>
             <button
               className={styles.orderButton}
               onClick={handleOrderButtonClick}
             >
-              <TiShoppingCart size={30}/> สั่งซื้อ
+              <TiShoppingCart size={30} /> สั่งซื้อ
             </button>
           </div>
         </div>
