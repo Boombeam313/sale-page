@@ -164,6 +164,13 @@
     margin-bottom: 10px;
     font-weight: bold;
 }
+.title2-1 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
 .font-family2 {
   font-size: 30px;
@@ -311,7 +318,7 @@
   margin-top: 30px;
 }
 .title9 {
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;

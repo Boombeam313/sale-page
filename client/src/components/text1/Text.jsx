@@ -105,7 +105,7 @@ export default function Text() {
       </div>
 
       <div className="title">
-      <p>คอลลาเจนเปปไทด์ : Collagen Peptide (ปลาคอด จากประเทศนอเวย์)</p>
+      <p>คอลลาเจนเปปไทด์ :<span className='title2-1'> Collagen Peptide (ปลาคอด จากประเทศนอเวย์)</span> </p>
       </div>
 
 <div className="font-family1">
@@ -130,7 +130,7 @@ export default function Text() {
       </div>
 <div className="title2">
 <div>
-<p>ไฟเบอร์จากข้าวสาลี : Wheat Fiber (นำเข้าจากฝรั่งเศส)</p>
+<p>ไฟเบอร์จากข้าวสาลี :<span className='title2-1'> Wheat Fiber (นำเข้าจากฝรั่งเศส)</span> </p>
 </div>
 </div>
 
@@ -161,7 +161,7 @@ export default function Text() {
     
       <div className="title3">
 <div>
-<p>แอล-กลูตาไธโอน : L-Glutathione</p>
+<p>แอล-กลูตาไธโอน : <span className='title2-1'> L-Glutathione</span></p>
 </div>
 </div>
 
@@ -187,7 +187,7 @@ export default function Text() {
 
       <div className="title4">
 <div>
-<p>สารสกัดจากใบแปะก๊วย : Ginkgo Extract</p>
+<p>สารสกัดจากใบแปะก๊วย : <span className='title2-1'> Ginkgo Extract</span></p>
 </div>
 </div>
 
@@ -217,12 +217,12 @@ export default function Text() {
 
       <div className="title5">
 <div>
-<p>วิตามินบีรวม</p>
+<p className="title4">วิตามินบีรวม</p>
 </div>
 </div>
 
 <div className="font-family6">
-<p>วิตามินบี1 : Vitamin B1</p>
+<p className='title2-1'>วิตามินบี1 : Vitamin B1</p>
 <p>หลักการทำงาน</p>
 <p>วิตามินบี 1 เผาผลาญอาหาร ช่วยให้ร่างกายนำพลังงานจากอาหารไปใช้ได้อย่างมีประสิทธิภาพ</p>
 <p>แหล่งที่มาของวิตามินบี1 </p>
@@ -235,7 +235,7 @@ export default function Text() {
 
 <div className="title6">
 <div>
-<p>วิตามินบี2 : Vitamin B2</p>
+<p>วิตามินบี2 : <span className='title2-1'> Vitamin B2</span></p>
 </div>
 </div>
 
@@ -254,7 +254,7 @@ export default function Text() {
 
   <div className="title7">
 <div>
-<p>วิตามินบี6 : Vitamin B6</p>
+<p>วิตามินบี6 : <span className='title2-1'> Vitamin B6</span></p>
 </div>
 </div>
 
@@ -278,7 +278,7 @@ export default function Text() {
 
     <div className="title8">
 <div>
-<p>วิตามินบี12 : Vitamin B12</p>
+<p>วิตามินบี12 : <span className='title2-1'> Vitamin B12</span></p>
 </div>
 </div>
 
@@ -313,8 +313,8 @@ export default function Text() {
 
 
       <div className="title9">
-<div>
-<p>แคลเซียม : calcium (สาหร่ายแดง นำเข้าจากไอร์แลนด์)</p>
+<div >
+<p className="title9">แคลเซียม : <span className='title2-1'> calcium (สาหร่ายแดง นำเข้าจากไอร์แลนด์)</span></p>
 </div>
 </div>
       <div className="font-family9">
@@ -338,16 +338,16 @@ export default function Text() {
         </div>
 
         <div className='font-family10'>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;กาแฟสำเร็จรูป 18-in-1</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% คอเลสเตอรอล </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% ไขมันทรานส์</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;รสชาติกลมกล่อม</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
+<p>กาแฟสำเร็จรูป 18-in-1</p>
+<p>หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
+<p>1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p>1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p><ImCross style={{ color: 'red' }} /> 0% คอเลสเตอรอล </p>
+<p><ImCross style={{ color: 'red' }} /> 0% ไขมันทรานส์</p>
+<p>ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
+<p>รสชาติกลมกล่อม</p>
+<p>มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
+<p>เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
 <p>เลขที่จดแจ้ง 13-2-02660-2-0091</p>
 </div>
 
