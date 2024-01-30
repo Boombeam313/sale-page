@@ -12,7 +12,8 @@ export default function Text() {
         <video
           controls
           autoPlay
-          src="video/ปัญหา.mp4"
+          src="videos/ปัญหา.mp4"
+          type="video/mp4"
         />
       </div>
 
@@ -52,7 +53,8 @@ export default function Text() {
         <video
           controls
           autoPlay
-          src="video/nanoVA1.mp4"
+          src="videos/nanoVA1.mp4"
+          type="video/mp4"
         />
       </div>
 
