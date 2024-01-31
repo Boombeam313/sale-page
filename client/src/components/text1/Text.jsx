@@ -37,6 +37,7 @@ export default function Text() {
         }
       });
     };
+    
 
     const observer1 = new IntersectionObserver(handleIntersection1, options);
     const observer2 = new IntersectionObserver(handleIntersection2, options);
@@ -53,9 +54,11 @@ export default function Text() {
   return (
     <>
       <div>
-        <div className="convideo">
-        <video autoPlay muted ref={videoRef1} src="video/ปัญหา.mp4" type="video/mp4"/>
-        </div>
+      <div className="convideo">
+  <video autoPlay controls muted ref={videoRef1} src="videos/ปัญหา.mp4" type="video/mp4" />
+</div>
+
+
 
         <div className="product-promotion-title">
           หมดเงิน หลายหมื่น แถม <span className="product-promotion-subtitle">ไม่เห็นผล</span>
@@ -90,7 +93,7 @@ export default function Text() {
         </div>
 
         <div className="con2video">
-          <video autoPlay muted ref={videoRef2} src="video/nanoVA1.mp4" type="video/mp4" />
+          <video autoPlay muted ref={videoRef2} src="videos/nanoVA1.mp4" type="video/mp4" />
         </div>
 
 
