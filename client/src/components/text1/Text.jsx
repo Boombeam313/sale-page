@@ -54,7 +54,7 @@ export default function Text() {
     <>
       <div>
         <div className="convideo">
-        <video autoPlay muted ref={videoRef1} src="video/ปัญหา.mp4" />
+        <video autoPlay muted ref={videoRef1} src="video/ปัญหา.mp4" type="video/mp4"/>
         </div>
 
         <div className="product-promotion-title">
@@ -90,7 +90,7 @@ export default function Text() {
         </div>
 
         <div className="con2video">
-          <video autoPlay muted ref={videoRef2} src="video/nanoVA1.mp4" />
+          <video autoPlay muted ref={videoRef2} src="video/nanoVA1.mp4" type="video/mp4" />
         </div>
 
 
