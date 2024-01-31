@@ -15,8 +15,7 @@ const ProductSelection = () => {
   const handleProductSelect = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
   };
-
-  return (
+return (
     <div>
       <div className="product-container">
         {products.map((product) => (
@@ -28,6 +27,7 @@ const ProductSelection = () => {
             price={product.price}
             onSelect={handleProductSelect}
             isSelected={selectedProduct && selectedProduct.id === product.id}
+            isRed={selectedProduct && selectedProduct.id === 'va'} // เพิ่ม prop isRed
           />
         ))}
       </div>
@@ -37,11 +37,11 @@ const ProductSelection = () => {
           <div className="selected-product-table">
             <div className="table-row">
               <div className="table-cell">ชื่อ:</div>
-              <div className="table-cell">{selectedProduct.name}</div>
+              <div className={`table-cell ${selectedProduct.id === 'va' ? 'red-text' : ''}`}>{selectedProduct.name}</div>
             </div>
             <div className="table-row">
               <div className="table-cell">ราคา:</div>
-              <div className="table-cell">{selectedProduct.price}</div>
+              <div className={`table-cell ${selectedProduct.id === 'va' ? 'red-text' : ''}`}>{selectedProduct.price}</div>
             </div>
           </div>
         ) : (

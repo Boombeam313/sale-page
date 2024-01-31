@@ -358,24 +358,39 @@ export default function Text() {
 
     <div className="imagereview1">
       <img
-        src="image/review1.webp"
+        src="image/review1.jpg"
         alt="imagereview1"
       />
     </div>
 
     <div className="imagereview2">
       <img
-        src="image/review2.webp"
+        src="image/review2.jpg"
         alt="review2"
       />
     </div>
 
     <div className="imagereview3">
       <img
-        src="image/review3.webp"
+        src="image/review3.jpg"
         alt="review3"
       />
     </div>
+
+    <div className="imagereview4">
+      <img
+        src="image/review4.jpg"
+        alt="review4"
+      />
+    </div>
+
+    <div className="imagereview5">
+      <img
+        src="image/review5.jpg"
+        alt="review5"
+      />
+    </div>
+
     <div className="Testtheproduct">
           มาตรฐานสินค้า 
       </div>
@@ -436,7 +451,7 @@ export default function Text() {
 
       <div className="imagereview9">
         <img
-          src="image/promotion.webp"
+          src="image/promotion.png"
           alt="factory1"
           className="promotion-img"
         />

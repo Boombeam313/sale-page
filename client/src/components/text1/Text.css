@@ -400,6 +400,31 @@
       height: auto;
       margin-bottom: 10px;
     }
+
+    .imagereview4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview4 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .imagereview5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview5 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
     .review-heading2{
       font-Size: 10px;
       font-weight: bold;
@@ -420,9 +445,9 @@
         }
 
         .imagereview4 img {
-          width: 60%; 
+          width: 80%; 
           height: auto;
-          margin-top: 50px;
+          margin-top: 10px;
         }
 
         .imagereview5 {
@@ -433,10 +458,10 @@
         }
 
         .imagereview5 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
-          margin-top: 50px;
+          margin-top: 10px;
         }
 
         .imagereview6 {
@@ -447,7 +472,7 @@
         }
 
         .imagereview6 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
           margin-top: 50px;
@@ -461,7 +486,7 @@
         }
 
         .imagereview7 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
           margin-top: 50px;
