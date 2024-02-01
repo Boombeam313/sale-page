@@ -4,9 +4,8 @@ const axios = require("axios");
 const lineNotifyWithImages = async (message, file) => {
     try {
         const lineForm = new FormData();
-        // lineForm.append('message', message);
+        lineForm.append('message', message);
         const imageBlob = new Blob([file.buffer], { type: file.mimetype });
-
         lineForm.append('imageFile', imageBlob, file.originalname);
     
     //   console.log('image in line ', file.buffer)
