@@ -6,7 +6,7 @@ const ProductSelection = () => {
     { id: 1, name: 'nanoVA 1 ห่อ ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
     { id: 2, name: 'nanoVA 2 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
     { id: 3, name: 'nanoVA 3 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
-    { id: 4, name: 'nanoVA 4 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
+    { id: 4, name: 'nanoVA 5 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
     // Add more products as needed
   ];
 
