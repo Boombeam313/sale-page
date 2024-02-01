@@ -4,16 +4,61 @@ import { ImCross } from "react-icons/im";
 import Moneybutton from '../moneybutton/Moneybutton';
 
 export default function Text() {
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersection1 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 1 is in view, play
+          videoRef1.current.play();
+        } else {
+          // Video 1 is out of view, pause
+          videoRef1.current.pause();
+        }
+      });
+    };
+
+    const handleIntersection2 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 2 is in view, play
+          videoRef2.current.play();
+        } else {
+          // Video 2 is out of view, pause
+          videoRef2.current.pause();
+        }
+      });
+    };
+    
+
+    const observer1 = new IntersectionObserver(handleIntersection1, options);
+    const observer2 = new IntersectionObserver(handleIntersection2, options);
+
+    observer1.observe(videoRef1.current);
+    observer2.observe(videoRef2.current);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+    };
+  }, [videoRef1, videoRef2]);
 
   return (
     <>
       <div>
-        <div className="convideo">
-        <video width="500" height="300" controls autoPlay>
-          <source src="videos/ปัญหา.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div className="convideo">
+  <video autoPlay controls muted ref={videoRef1} src="videos/ปัญหา.mp4" type="video/mp4" />
+</div>
+
+
 
         <div className="product-promotion-title">
           หมดเงิน หลายหมื่น แถม <span className="product-promotion-subtitle">ไม่เห็นผล</span>
@@ -48,7 +93,7 @@ export default function Text() {
         </div>
 
         <div className="con2video">
-          <video autoPlay  src="videos/nanoVA1.mp4" type="video/mp4" />
+          <video autoPlay muted ref={videoRef2} src="videos/nanoVA1.mp4" type="video/mp4" />
         </div>
 
 
