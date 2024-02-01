@@ -51,13 +51,13 @@ const add_order = async (req, res) => {
         productId,
         createAt: Date.now(),
       });
-      const methodForNotify = 'ชำระเงิน ณ ปลายขอบฟ้า'
+      const methodForNotify = 'เก็บเงินปลายทาง'
       const messageLines = [
-        "Product Name: " + productName,
-        "Customer Name: " + customerName,
-        "Customer Phone: " + customerPhone,
-        "Customer Address: " + customerAddress,
-        "Method for Notify: " + methodForNotify
+        "ชื่อสินค้า : " + productName,
+        "ชื่อลูกค้า : " + customerName,
+        "เบอร์โทร : " + customerPhone,
+        "ที่อยู่ : " + customerAddress,
+        "วิธีการชำระเงิน: " + methodForNotify
       ];
       const message = messageLines.join('\n');
 
@@ -100,13 +100,13 @@ const add_order = async (req, res) => {
       });
 
       // console.log(fileBuffer)
-      const methodForNotify = 'ชำระเงิน ณ ปีที่แล้ว'
+      const methodForNotify = 'โอนเข้าบัญชี'
       const messageLines = [
-        "Product Name: " + productName,
-        "Customer Name: " + customerName,
-        "Customer Phone: " + customerPhone,
-        "Customer Address: " + customerAddress,
-        "Method for Notify: " + methodForNotify
+        "ชื่อสินค้า : " + productName,
+        "ชื่อลูกค้า : " + customerName,
+        "เบอร์โทร : " + customerPhone,
+        "ที่อยู่ : " + customerAddress,
+        "วิธีการชำระเงิน: " + methodForNotify
       ];
       const message = messageLines.join('\n');
       

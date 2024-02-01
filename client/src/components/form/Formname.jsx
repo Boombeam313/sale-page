@@ -108,7 +108,6 @@ const Formname = () => {
       event.target.value = null;
       return;
     } else {
-      console.log('file', file)
       setSelectedFile(file);
     }
   };
