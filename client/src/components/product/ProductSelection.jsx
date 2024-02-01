@@ -1,31 +1,12 @@
-// ProductSelection.js
-
 import React, { useState } from 'react';
 import './Project.css';
 
-// const ProductCard = ({ id, name, imageSrc, price, onSelect, isSelected }) => {
-//   const handleSelect = () => {
-//     onSelect({ id, name, price, isSelected: !isSelected });
-//   };
-
-//   return (
-//     <div className={`product-card ${isSelected ? 'selected' : ''}`} onClick={handleSelect}>
-//       <img className="product-image" src={imageSrc} alt={name} />
-//       <p>{name}</p>
-//       <p>{price}</p>
-//     </div>
-//   );
-// };
-
-
-////////////////////////////////////////////
-
 const ProductSelection = () => {
   const products = [
-    { id: 1, name: 'nanova 1 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
-    { id: 2, name: 'nanova 2 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
-    { id: 3, name: 'nanova 3 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
-    { id: 4, name: 'nanova 4 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
+    { id: 1, name: 'nanoVA 1 ห่อ ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
+    { id: 2, name: 'nanoVA 2 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
+    { id: 3, name: 'nanoVA 3 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
+    { id: 4, name: 'nanoVA 4 ห่อ', imageSrc: './public/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
     // Add more products as needed
   ];
 
@@ -34,8 +15,7 @@ const ProductSelection = () => {
   const handleProductSelect = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
   };
-
-  return (
+return (
     <div>
       <div className="product-container">
         {products.map((product) => (
@@ -47,6 +27,7 @@ const ProductSelection = () => {
             price={product.price}
             onSelect={handleProductSelect}
             isSelected={selectedProduct && selectedProduct.id === product.id}
+            isRed={selectedProduct && selectedProduct.id === 'va'} // เพิ่ม prop isRed
           />
         ))}
       </div>
@@ -56,11 +37,11 @@ const ProductSelection = () => {
           <div className="selected-product-table">
             <div className="table-row">
               <div className="table-cell">ชื่อ:</div>
-              <div className="table-cell">{selectedProduct.name}</div>
+              <div className={`table-cell ${selectedProduct.id === 'va' ? 'red-text' : ''}`}>{selectedProduct.name}</div>
             </div>
             <div className="table-row">
               <div className="table-cell">ราคา:</div>
-              <div className="table-cell">{selectedProduct.price}</div>
+              <div className={`table-cell ${selectedProduct.id === 'va' ? 'red-text' : ''}`}>{selectedProduct.price}</div>
             </div>
           </div>
         ) : (

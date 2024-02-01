@@ -8,6 +8,10 @@ body {
   align-items: center;
 }
 
+.nanopVA {
+  color: #710c04;
+}
+
 h1, h2 {
   text-align: center;
 }

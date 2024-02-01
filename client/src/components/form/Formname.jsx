@@ -1,4 +1,3 @@
-// Formname.js
 import { useState, useRef } from "react";
 import styles from './Form.module.css';
 import { FaLine, FaUpload, FaFile } from "react-icons/fa";
@@ -6,9 +5,7 @@ import { IoCall } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
 import { FaTruckFast, FaRegCreditCard, FaCopy } from "react-icons/fa6";
 import { Radio } from 'antd';
-import axios from 'axios'
-
-
+import axios from 'axios';
 
 const Formname = () => {
   const [customerAddress, setCustomerAddress] = useState("");
@@ -16,7 +13,7 @@ const Formname = () => {
   const [customerPhone, setCustomerPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState(1);
   const [selectedFile, setSelectedFile] = useState(null);
-  const [productId, setProdcutId] = useState('')
+  const [productId, setProductId] = useState(''); // Corrected typo in state variable name
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
@@ -24,51 +21,56 @@ const Formname = () => {
 
   const handleProductSelect = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
-    setProdcutId(selectedProduct.id)
+    setProductId(selectedProduct.id); // Corrected typo in state variable name
   };
 
   const handleOrderButtonClick = async () => {
-    // แสดงข้อมูลที่ต้องการลงใน console
     try {
       if (!customerName || !customerPhone || !customerAddress || !selectedProduct) {
         alert("กรุณากรอกข้อมูลทุกช่อง");
-        return; // Do not proceed with the order if any required field is missing
+        nameInputRef.current.scrollIntoView({ behavior: 'smooth' });
+        return;
       }
+
       const orderData = new FormData();
       orderData.append('customerName', customerName);
       orderData.append('customerPhone', customerPhone);
       orderData.append('customerAddress', customerAddress);
       orderData.append('paymentMethod', paymentMethod);
-      orderData.append('productId', productId)
+      orderData.append('productId', productId);
+
       if (paymentMethod === 2) {
         if (!selectedFile) {
-          // Display an alert if no file is attached
           alert("กรุณาแนบไฟล์หลักฐานการโอนเงิน");
-          return; // Do not proceed with the order
+          return;
         }
-      }
-      if (selectedFile) {
         orderData.append('file', selectedFile);
       }
-      // console.log('orderData', orderData)
-      // Make a POST request to the server
+
       const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/order/add-order`, orderData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      // console.log('Server Response:', response.data);
-      // alert('Order placed successfully!');
+      if (response.status === 200) {
+        alert("Order Placed Successfully!");
+
+        setCustomerName("");
+        setCustomerPhone("");
+        setCustomerAddress("");
+        setPaymentMethod(1);
+        setProductId("");
+        setSelectedFile(null);
+        setSelectedProduct(null);
+        nameInputRef.current.focus();
+      } else {
+        alert('Error placing order. Please try again.');
+      }
     } catch (error) {
       console.error('Error placing order:', error.response);
-      // alert('Error placing order. Please try again.');
-
+      alert('Error placing order. Please try again.');
     }
-    alert("Order Placed Successfully!");
-
-    // โฟกัสที่ input ชื่อ-นามสกุล
-    nameInputRef.current.focus();
   };
 
   const handleCallButtonClick = () => {
@@ -92,25 +94,19 @@ const Formname = () => {
     const file = event.target.files[0];
 
     if (!file) {
-      // Handle the case where no file is selected
       setSelectedFile(null);
       return;
     }
 
     if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
       alert("กรุณาเลือกไฟล์ที่มีนามสกุล .jpg, .jpeg, หรือ .png เท่านั้น");
-      // ล้างค่า selectedFile ในกรณีที่ไม่ใช่ไฟล์ที่ถูกต้อง
       setSelectedFile(null);
-      // ล้างค่า input file
       event.target.value = null;
-      return
-    }
-    else {
-      setSelectedFile(file)
-      // console.log('set file in else', file)
+      return;
+    } else {
+      setSelectedFile(file);
     }
   };
-
 
   const handleCopyButtonClick = () => {
     if (accountNumberRef.current) {
@@ -120,10 +116,10 @@ const Formname = () => {
   };
 
   const products = [
-    { id: 1, name: 'nanova 1 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_8_11zon.webp', price: '390฿' },
-    { id: 2, name: 'nanova 2 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_7_11zon.webp', price: '690฿' },
-    { id: 3, name: 'nanova 3 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_6_11zon.webp', price: '990฿' },
-    { id: 4, name: 'nanova 4 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_5_11zon.webp', price: '1550฿' },
+    { id: 1, name: 'nanoVA 1 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_8_11zon.jpg', price: '390฿' },
+    { id: 2, name: 'nanoVA 2 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_7_11zon.jpg', price: '690฿' },
+    { id: 3, name: 'nanoVA 3 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_6_11zon.jpg', price: '990฿' },
+    { id: 4, name: 'nanoVA 5 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_5_11zon.jpg', price: '1550฿' },
     // Add more products as needed
   ];
 

@@ -1,21 +1,67 @@
 // Text.jsx
 import React from 'react';
-import './Text.css'; // Import the CSS file
+import './text.css'; // Import the CSS file
 import { ImCross } from "react-icons/im";
 import Moneybutton from '../moneybutton/Moneybutton';
 
 export default function Text() {
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersection1 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 1 is in view, play
+          videoRef1.current.play();
+        } else {
+          // Video 1 is out of view, pause
+          videoRef1.current.pause();
+        }
+      });
+    };
+
+    const handleIntersection2 = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Video 2 is in view, play
+          videoRef2.current.play();
+        } else {
+          // Video 2 is out of view, pause
+          videoRef2.current.pause();
+        }
+      });
+    };
+
+    const observer1 = new IntersectionObserver(handleIntersection1, options);
+    const observer2 = new IntersectionObserver(handleIntersection2, options);
+
+    observer1.observe(videoRef1.current);
+    observer2.observe(videoRef2.current);
+
+    return () => {
+      observer1.disconnect();
+      observer2.disconnect();
+    };
+  }, [videoRef1, videoRef2]);
+
   return (
     <>
-      <div>
-        <div className="convideo">
-          <video
-            controls
-            autoPlay
-            src="videos/ปัญหา.mp4"
-            type="video/mp4"
-          />
-        </div>
+       <div>
+      <div className="convideo">
+        <video
+          controls
+          autoPlay
+          src="videos/ปัญหา.mp4"
+          type="video/mp4"
+        />
+      </div>
 
         <div className="product-promotion-title">
           หมดเงิน หลายหมื่น แถม <span className="product-promotion-subtitle">ไม่เห็นผล</span>
@@ -49,28 +95,28 @@ export default function Text() {
           </div>
         </div>
 
-        <div className="con2video">
-          <video
-            controls
-            autoPlay
-            src="videos/nanoVA1.mp4"
-            type="video/mp4"
+      <div className="con2video">
+        <video
+          controls
+          autoPlay
+          src="videos/nanoVA1.mp4"
+          type="video/mp4"
+        />
+      </div>
+
+      <div className="productimage">
+        <div>
+          <img
+            src="image2/Collagen peptides.jpg"
+            alt="product"
+            className="productimage"
           />
         </div>
+      </div>
 
-        <div className="productimage">
-          <div>
-            <img
-              src="image2/Collagen peptides.jpg"
-              alt="product"
-              className="productimage"
-            />
-          </div>
-        </div>
-
-        <div className="title">
-          <p>คอลลาเจนเปปไทด์ : Collagen Peptide (ปลาคอด จากประเทศนอเวย์)</p>
-        </div>
+      <div className="title">
+      <p>คอลลาเจนเปปไทด์ : Collagen Peptide (ปลาคอด จากประเทศนอเวย์)</p>
+      </div>
 
         <div className="font-family1">
           <p>หลักการทำงาน</p>
@@ -83,20 +129,20 @@ export default function Text() {
           <p>มีปริมาณโปรตีนสูง และโมเลกุลขนาดเล็ก ทำให้ร่างกายดูดซึมได้ง่าย</p>
         </div>
 
-        <div className="productimage2">
-          <div>
-            <img
-              src="image2/Wheat Fiber.jpg"
-              alt="product"
-              className="productimage2"
-            />
-          </div>
+<div className="productimage2">
+        <div>
+          <img
+            src="image2/Wheat Fiber.jpg"
+            alt="product"
+            className="productimage2"
+          />
         </div>
-        <div className="title2">
-          <div>
-            <p>ไฟเบอร์จากข้าวสาลี : Wheat Fiber (นำเข้าจากฝรั่งเศส)</p>
-          </div>
-        </div>
+      </div>
+<div className="title2">
+<div>
+<p>ไฟเบอร์จากข้าวสาลี : Wheat Fiber (นำเข้าจากฝรั่งเศส)</p>
+</div>
+</div>
 
 
         <div className="font-family2">
@@ -122,12 +168,12 @@ export default function Text() {
           </div>
         </div>
 
-
-        <div className="title3">
-          <div>
-            <p>แอล-กลูตาไธโอน : L-Glutathione</p>
-          </div>
-        </div>
+    
+      <div className="title3">
+<div>
+<p>แอล-กลูตาไธโอน : L-Glutathione</p>
+</div>
+</div>
 
 
         <div className="font-family3">
@@ -149,11 +195,11 @@ export default function Text() {
           </div>
         </div>
 
-        <div className="title4">
-          <div>
-            <p>สารสกัดจากใบแปะก๊วย : Ginkgo Extract</p>
-          </div>
-        </div>
+      <div className="title4">
+<div>
+<p>สารสกัดจากใบแปะก๊วย : Ginkgo Extract</p>
+</div>
+</div>
 
         <div className="font-family5">
           <p>หลักการทำงาน</p>
@@ -179,29 +225,29 @@ export default function Text() {
         </div>
 
 
-        <div className="title5">
-          <div>
-            <p>วิตามินบีรวม</p>
-          </div>
-        </div>
+      <div className="title5">
+<div>
+<p>วิตามินบีรวม</p>
+</div>
+</div>
 
-        <div className="font-family6">
-          <p>วิตามินบี1 : Vitamin B1</p>
-          <p>หลักการทำงาน</p>
-          <p>วิตามินบี 1 เผาผลาญอาหาร ช่วยให้ร่างกายนำพลังงานจากอาหารไปใช้ได้อย่างมีประสิทธิภาพ</p>
-          <p>แหล่งที่มาของวิตามินบี1 </p>
-          <p>แหล่งที่มา</p>
-          <p>• อาหารจำพวกธัญพืชไม่ขัดสี เช่น ข้าวซ้อมมือ ข้าวกล้อง ข้าวโพด ขนมปังโฮลวีต</p>
-          <p>• อาหารจำพวกเนื้อสัตว์ เช่น เนื้อหมู เนื้อไก่ เนื้อปลา ตับ </p>
-          <p>• อาหารจำพวกถั่วเมล็ดแห้ง เช่น ถั่วเหลือง ถั่วลิสง ถั่วเขียว ถั่วแดง</p>
-          <p>• อาหารจำพวกไข่ </p>
-        </div>
+<div className="font-family6">
+<p>วิตามินบี1 : Vitamin B1</p>
+<p>หลักการทำงาน</p>
+<p>วิตามินบี 1 เผาผลาญอาหาร ช่วยให้ร่างกายนำพลังงานจากอาหารไปใช้ได้อย่างมีประสิทธิภาพ</p>
+<p>แหล่งที่มาของวิตามินบี1 </p>
+<p>แหล่งที่มา</p>
+<p>• อาหารจำพวกธัญพืชไม่ขัดสี เช่น ข้าวซ้อมมือ ข้าวกล้อง ข้าวโพด ขนมปังโฮลวีต</p>
+<p>• อาหารจำพวกเนื้อสัตว์ เช่น เนื้อหมู เนื้อไก่ เนื้อปลา ตับ </p>
+<p>• อาหารจำพวกถั่วเมล็ดแห้ง เช่น ถั่วเหลือง ถั่วลิสง ถั่วเขียว ถั่วแดง</p>
+<p>• อาหารจำพวกไข่ </p>
+</div>
 
-        <div className="title6">
-          <div>
-            <p>วิตามินบี2 : Vitamin B2</p>
-          </div>
-        </div>
+<div className="title6">
+<div>
+<p>วิตามินบี2 : Vitamin B2</p>
+</div>
+</div>
 
         <div className="font-family7">
 
@@ -216,11 +262,11 @@ export default function Text() {
             อาหารจำพวกผัก เช่น ผักใบเขียว เห็ดหูหนู</p>
         </div>
 
-        <div className="title7">
-          <div>
-            <p>วิตามินบี6 : Vitamin B6</p>
-          </div>
-        </div>
+  <div className="title7">
+<div>
+<p>วิตามินบี6 : Vitamin B6</p>
+</div>
+</div>
 
 
         <div className="font-family8">
@@ -240,11 +286,11 @@ export default function Text() {
 
         </div>
 
-        <div className="title8">
-          <div>
-            <p>วิตามินบี12 : Vitamin B12</p>
-          </div>
-        </div>
+    <div className="title8">
+<div>
+<p>วิตามินบี12 : Vitamin B12</p>
+</div>
+</div>
 
         <div className="font-family8">
           <p>หลักการทำงาน</p>
@@ -276,19 +322,19 @@ export default function Text() {
         </div>
 
 
-        <div className="title9">
-          <div>
-            <p>แคลเซียม : calcium (สาหร่ายแดง นำเข้าจากไอร์แลนด์)</p>
-          </div>
-        </div>
-        <div className="font-family9">
-          <p>หลักการทำงาน</p>
-          <p>สร้างเม็ดเลือดแดง ช่วยการทำงานของระบบประสาทและสมอง ควบคุมอารมณ์ การเรียนรู้ ความจำ
-            และการทำงานของระบบประสาท ป้องกันความเสียหายต่อเซลล์ประสาทจากอนุมูลอิสระ</p>
-          <p>วิตามินบี12 จำเป็นสำหรับการทำงานของเซลล์เม็ดเลือดขาว ซึ่งเป็นเซลล์ที่ทำหน้าที่ปกป้องร่างกายจากการติดเชื้อ</p>
-          <p>วิตามินบี12 เป็นวิตามินที่ละลายในน้ำ ร่างกายไม่สามารถสังเคราะห์ได้เอง จึงจำเป็นต้องได้รับจากการรับประทานอาหารหรืออาหารเสริม</p>
-          <p>แหล่งที่มา ได้แก่</p>
-          <p> • อาหารจำพวกสัตว์ เช่น เนื้อสัตว์ ตับ ปลา ไข่ นม และผลิตภัณฑ์จากนม</p>
+      <div className="title9">
+<div>
+<p>แคลเซียม : calcium (สาหร่ายแดง นำเข้าจากไอร์แลนด์)</p>
+</div>
+</div>
+      <div className="font-family9">
+<p>หลักการทำงาน</p>
+<p>สร้างเม็ดเลือดแดง ช่วยการทำงานของระบบประสาทและสมอง ควบคุมอารมณ์ การเรียนรู้ ความจำ 
+  และการทำงานของระบบประสาท ป้องกันความเสียหายต่อเซลล์ประสาทจากอนุมูลอิสระ</p>
+<p>วิตามินบี12 จำเป็นสำหรับการทำงานของเซลล์เม็ดเลือดขาว ซึ่งเป็นเซลล์ที่ทำหน้าที่ปกป้องร่างกายจากการติดเชื้อ</p>
+<p>วิตามินบี12 เป็นวิตามินที่ละลายในน้ำ ร่างกายไม่สามารถสังเคราะห์ได้เอง จึงจำเป็นต้องได้รับจากการรับประทานอาหารหรืออาหารเสริม</p>
+<p>แหล่งที่มา ได้แก่</p>
+<p> • อาหารจำพวกสัตว์ เช่น เนื้อสัตว์ ตับ ปลา ไข่ นม และผลิตภัณฑ์จากนม</p>
 
 
         </div>
@@ -302,47 +348,47 @@ export default function Text() {
         </div>
 
         <div className='font-family10'>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;กาแฟสำเร็จรูป 18-in-1</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% คอเลสเตอรอล </p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% ไขมันทรานส์</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;รสชาติกลมกล่อม</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
-          <p>เลขที่จดแจ้ง 13-2-02660-2-0091</p>
-        </div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;กาแฟสำเร็จรูป 18-in-1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;หอม กลมกล่อม เข้มข้น เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1 ซองพลังงานแค่ 70 กิโลแคลอรี</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% คอเลสเตอรอล </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<ImCross style={{ color: 'red' }} /> 0% ไขมันทรานส์</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;รสชาติกลมกล่อม</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;มีไฟเบอร์สูงช่วยในการขับถ่าย</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</p>
+<p>เลขที่จดแจ้ง 13-2-02660-2-0091</p>
+</div>
 
 
         <div className="review-heading">
           รีวิว
         </div>
 
-        <div className="imagereview1">
-          <img
-            src="image/review1.webp"
-            alt="imagereview1"
-          />
-        </div>
+    <div className="imagereview1">
+      <img
+        src="image/review1.webp"
+        alt="imagereview1"
+      />
+    </div>
 
-        <div className="imagereview2">
-          <img
-            src="image/review2.webp"
-            alt="review2"
-          />
-        </div>
+    <div className="imagereview2">
+      <img
+        src="image/review2.webp"
+        alt="review2"
+      />
+    </div>
 
-        <div className="imagereview3">
-          <img
-            src="image/review3.webp"
-            alt="review3"
-          />
-        </div>
-        <div className="Testtheproduct">
-          มาตรฐานสินค้า
-        </div>
+    <div className="imagereview3">
+      <img
+        src="image/review3.webp"
+        alt="review3"
+      />
+    </div>
+    <div className="Testtheproduct">
+          มาตรฐานสินค้า 
+      </div>
 
         <div className="imagereview4">
           <img
@@ -398,15 +444,15 @@ export default function Text() {
           />
         </div>
 
-        <div className="imagereview9">
-          <img
-            src="image/promotion.webp"
-            alt="factory1"
-            className="promotion-img"
-          />
-        </div>
-        <div className="small-heading">
-          nano <span style={{ fontSize: '144px', color: '#710C04' }}>VA</span>
+      <div className="imagereview9">
+        <img
+          src="image/promotion.webp"
+          alt="factory1"
+          className="promotion-img"
+        />
+      </div>
+      <div className="small-heading">
+          nano <span style={{ fontSize: '144px', color: '#710C04' }}>VA</span> 
         </div>
 
       </div>

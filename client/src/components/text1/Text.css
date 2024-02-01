@@ -32,7 +32,7 @@
   
 
 .font-family1 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -164,9 +164,16 @@
     margin-bottom: 10px;
     font-weight: bold;
 }
+.title2-1 {
+  font-size: 30px;
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
 .font-family2 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -184,7 +191,7 @@
 
 
 .font-family3 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -230,7 +237,7 @@
 
 
 .font-family5 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -256,7 +263,7 @@
 
 
 .font-family6 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -272,7 +279,7 @@
 
 
 .font-family7 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -288,7 +295,7 @@
 }
 
 .font-family8 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -311,7 +318,7 @@
   margin-top: 30px;
 }
 .title9 {
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -319,7 +326,7 @@
 }
 
 .font-family9 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
@@ -393,6 +400,31 @@
       height: auto;
       margin-bottom: 10px;
     }
+
+    .imagereview4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview4 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .imagereview5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* หรือกำหนดความสูงตามที่คุณต้องการ */
+    }
+    .imagereview5 img {
+      width: 80%; 
+      height: auto;
+      margin-bottom: 10px;
+    }
+
     .review-heading2{
       font-Size: 10px;
       font-weight: bold;
@@ -413,9 +445,9 @@
         }
 
         .imagereview4 img {
-          width: 60%; 
+          width: 80%; 
           height: auto;
-          margin-top: 50px;
+          margin-top: 10px;
         }
 
         .imagereview5 {
@@ -426,10 +458,10 @@
         }
 
         .imagereview5 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
-          margin-top: 50px;
+          margin-top: 10px;
         }
 
         .imagereview6 {
@@ -440,7 +472,7 @@
         }
 
         .imagereview6 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
           margin-top: 50px;
@@ -454,7 +486,7 @@
         }
 
         .imagereview7 img {
-          width: 70%; 
+          width: 80%; 
           height: auto;
           max-width: 100%; 
           margin-top: 50px;
