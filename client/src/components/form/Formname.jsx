@@ -14,6 +14,8 @@ const Formname = () => {
   const [paymentMethod, setPaymentMethod] = useState(1);
   const [selectedFile, setSelectedFile] = useState(null);
   const [productId, setProductId] = useState(''); // Corrected typo in state variable name
+  const [productName, setProductName] = useState('')
+
   const nameInputRef = useRef(null);
   const accountNumberRef = useRef(null);
 
@@ -22,6 +24,7 @@ const Formname = () => {
   const handleProductSelect = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
     setProductId(selectedProduct.id); // Corrected typo in state variable name
+    setProductName(selectedProduct.name)
   };
 
   const handleOrderButtonClick = async () => {
@@ -38,6 +41,7 @@ const Formname = () => {
       orderData.append('customerAddress', customerAddress);
       orderData.append('paymentMethod', paymentMethod);
       orderData.append('productId', productId);
+      orderData.append('productName', productName);
 
       if (paymentMethod === 2) {
         if (!selectedFile) {

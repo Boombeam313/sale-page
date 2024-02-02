@@ -1,0 +1,64 @@
+
+.myComponent,
+.Component,
+.objective,
+.objectivet1,
+.Usage,
+.Usage1,
+.data,
+.data1,
+.Rights,
+.Rights1,
+.safety,
+.safety1,
+.contact,
+.contact1 {
+  font-family: 'Kanit';
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 100px;
+  font-weight: 500;
+}
+
+
+.myComponent,
+.objective,
+.Usage,
+.data,
+.Rights,
+.safety,
+.contact {
+  font-size: 60px;
+}
+
+
+.Component,
+.objectivet1,
+.Usage1,
+.data1,
+.Rights1,
+.safety1,
+.contact1 {
+  font-size: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .myComponent,
+  .Component,
+  .objective,
+  .objectivet1,
+  .Usage,
+  .Usage1,
+  .data,
+  .data1,
+  .Rights,
+  .Rights1,
+  .safety,
+  .safety1,
+  .contact,
+  .contact1 {
+    font-size: 20px;
+  }
+}
