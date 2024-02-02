@@ -24,7 +24,7 @@ const add_order = async (req, res) => {
     const customerAddress = req.body.customerAddress;
     const customerPhone = req.body.customerPhone;
     const productId = req.body.productId;
-    const productName = req.body.productName
+    const productName = req.body.productName;
 
     // console.log('product name', productName)
 
@@ -51,31 +51,29 @@ const add_order = async (req, res) => {
         productId,
         createAt: Date.now(),
       });
-      const methodForNotify = 'เก็บเงินปลายทาง'
+      const methodForNotify = "เก็บเงินปลายทาง";
       const messageLines = [
         "ชื่อสินค้า : " + productName,
         "ชื่อลูกค้า : " + customerName,
         "เบอร์โทร : " + customerPhone,
         "ที่อยู่ : " + customerAddress,
-        "วิธีการชำระเงิน : " + methodForNotify
+        "วิธีการชำระเงิน : " + methodForNotify,
       ];
-      const message = messageLines.join('\n');
+      const message = messageLines.join("\n");
 
       await newOrderShipping.save();
-    
-      /// line notify 
-      lineNotify(message)
+
+      /// line notify
+      lineNotify(message);
 
       res.json(newOrderShipping);
     }
     /// Credits
     else if (paymentMethod === "2" && file) {
       // console.log("shipping 2");
-      console.log("Received File Data:", file);
+      // console.log("Received File Data:", file);
 
       // console.log("file mimetype", file.mimetype);
-
-
 
       if (file.mimetype !== "image/jpeg" && file.mimetype !== "image/png") {
         res
@@ -95,28 +93,39 @@ const add_order = async (req, res) => {
         productId,
         createAt: Date.now(),
       });
+      // console.log("file buffer", fileBuffer.byteLength);
+      // console.log(
+      //   "================================================================"
+      // );
 
       const newSlipBill = new SilpBill({
         orderId: genOrderId,
         image: fileBuffer,
       });
 
-      console.log(fileBuffer)
-      const methodForNotify = 'โอนเข้าบัญชี'
+      // console.log('buffer after create new obj sdsssssssssssssssssssssss', newSlipBill.image)
+
+      // const base64String = newSlipBill.image ; // Replace this with your actual Base64 string
+
+      // // Convert Base64 to Buffer
+      // const bufferData = Buffer.from(base64String, "base64");
+
+      // console.log("Buffer Data:", bufferData);
+
+      const methodForNotify = "โอนเข้าบัญชี";
       const messageLines = [
         "ชื่อสินค้า : " + productName,
         "ชื่อลูกค้า : " + customerName,
         "เบอร์โทร : " + customerPhone,
         "ที่อยู่ : " + customerAddress,
-        "วิธีการชำระเงิน : " + methodForNotify
+        "วิธีการชำระเงิน : " + methodForNotify,
       ];
-      const message = messageLines.join('\n');
-      
+      const message = messageLines.join("\n");
+
       await newOrderCredits.save();
       await newSlipBill.save();
 
-      lineNotifyWithImages(message, file)
-
+      lineNotifyWithImages(message, file);
 
       // console.log("newOrder", newOrderCredits);
       // console.log("newSlipBill", newSlipBill);
@@ -137,29 +146,24 @@ const add_order = async (req, res) => {
 
 const getBills = async (req, res) => {
   const orderId = req.params.orderId;
-  const message = 'asdasdas'
   SilpBill.findOne({ orderId })
     .then((silpBill) => {
       if (!silpBill) {
-        res.status(404).send('Image not found');
+        res.status(404).send("Image not found");
         return;
       }
-      console.log('silpBill', silpBill)
-      lineNotify(message, silpBill)
-      res.contentType('image/jpeg'); // Adjust the content type based on your file type
+      console.log("silpBill", silpBill.image.byteLength);
+      res.contentType("image/jpeg"); // Adjust the content type based on your file type
       res.send(silpBill.image);
     })
     .catch((error) => {
-      console.error('Error fetching image:', error.message);
-      res.status(500).send('Error fetching image'+ error);
+      console.error("Error fetching image:", error.message);
+      res.status(500).send("Error fetching image" + error);
     });
-}
-
-
-
+};
 
 module.exports = {
   orders,
   add_order,
-  getBills
+  getBills,
 };
