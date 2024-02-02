@@ -57,7 +57,7 @@ const add_order = async (req, res) => {
         "ชื่อลูกค้า : " + customerName,
         "เบอร์โทร : " + customerPhone,
         "ที่อยู่ : " + customerAddress,
-        "วิธีการชำระเงิน: " + methodForNotify
+        "วิธีการชำระเงิน : " + methodForNotify
       ];
       const message = messageLines.join('\n');
 
@@ -71,9 +71,11 @@ const add_order = async (req, res) => {
     /// Credits
     else if (paymentMethod === "2" && file) {
       // console.log("shipping 2");
-      // console.log("Received File Data:", file);
+      console.log("Received File Data:", file);
 
       // console.log("file mimetype", file.mimetype);
+
+
 
       if (file.mimetype !== "image/jpeg" && file.mimetype !== "image/png") {
         res
@@ -99,14 +101,14 @@ const add_order = async (req, res) => {
         image: fileBuffer,
       });
 
-      // console.log(fileBuffer)
+      console.log(fileBuffer)
       const methodForNotify = 'โอนเข้าบัญชี'
       const messageLines = [
         "ชื่อสินค้า : " + productName,
         "ชื่อลูกค้า : " + customerName,
         "เบอร์โทร : " + customerPhone,
         "ที่อยู่ : " + customerAddress,
-        "วิธีการชำระเงิน: " + methodForNotify
+        "วิธีการชำระเงิน : " + methodForNotify
       ];
       const message = messageLines.join('\n');
       
