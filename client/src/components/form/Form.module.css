@@ -101,7 +101,7 @@
     outline: none;
     border: none;
     overflow: hidden;
-    background: linear-gradient(45deg, #04f404, #0af36b);
+    background: linear-gradient(45deg, #00B900, #0af36b);
     position: relative;
     text-decoration: none;
 
@@ -144,7 +144,7 @@
     outline: none;
     border: none;
     overflow: hidden;
-    background: linear-gradient(45deg, #3498db, #1080e3);
+    background: linear-gradient(45deg, #0a5689, #3da0f7);
     position: relative;
   }
   

@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Moneybutton.module.css'; // Assuming you have a CSS module named Moneybutton.css
+import { FaLine, FaUpload, FaFile } from "react-icons/fa";
 
 const Moneybutton = () => {
   const phoneNumber = '0825162412';
@@ -10,7 +11,7 @@ const Moneybutton = () => {
         className={`${style.buttonLine} ${style.buttonWave}`}
         onClick={() => window.location.href = 'https://page.line.me/579vamkm?openQrModal=true'}
       >
-        line
+        line 
       </button>
       <button
         className={`${style.buttonFacebook} ${style.buttonWave}`}

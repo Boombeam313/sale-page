@@ -878,6 +878,7 @@
   }
 
   
+  
 .container {
     font-size: 20px;
     font-family: 'Kanit';
@@ -915,3 +916,19 @@
     height: auto;
   }
   
+
+  @media screen and (max-width: 768px) {
+    .font-family1,
+    .font-family2,
+    .font-family3,
+    .font-family4,
+    .font-family5,
+    .font-family6,
+    .font-family7,
+    .font-family8,
+    .font-family9 {
+      font-size: 18px;
+
+    }
+  }
+

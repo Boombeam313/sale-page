@@ -120,10 +120,11 @@ const Formname = () => {
   };
 
   const products = [
-    { id: 1, name: 'nanoVA 1 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_8_11zon.jpg', price: '390฿' },
-    { id: 2, name: 'nanoVA 2 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_7_11zon.jpg', price: '690฿' },
-    { id: 3, name: 'nanoVA 3 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_6_11zon.jpg', price: '990฿' },
-    { id: 4, name: 'nanoVA 5 ห่อ', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_5_11zon.jpg', price: '1550฿' },
+    { id: 1, name: 'nanoVA 1 ถุง', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_8_11zon.jpg', price: '390฿' },
+    { id: 2, name: 'nanoVA 2 ถุง', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_7_11zon.jpg', price: '690฿' },
+    { id: 3, name: 'nanoVA 3 ถุง', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_6_11zon.jpg', price: '990฿' },
+    { id: 4, name: 'nanoVA 5 ถุง', imageSrc: '/image/LINE_ALBUM_2023.11.23_231123_5_11zon.jpg', price: '1550฿' },
+    
     // Add more products as needed
   ];
 
@@ -307,7 +308,7 @@ const Formname = () => {
               className={styles.orderButton}
               onClick={handleOrderButtonClick}
             >
-              <TiShoppingCart size={30} /> สั่งซื้อ
+              <TiShoppingCart size={30} />สั่งซื้อ
             </button>
           </div>
         </div>
