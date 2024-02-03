@@ -93,7 +93,7 @@ export default function Text() {
         </div>
 
         <div className="con2video">
-          <video autoPlay muted ref={videoRef2} src="videos/nanoVA1.mp4" type="video/mp4" />
+          <video autoPlay controls muted ref={videoRef2} src="videos/nanoVA1.mp4" type="video/mp4" />
         </div>
 
 
@@ -297,10 +297,7 @@ export default function Text() {
   <p> &nbsp;&nbsp;&nbsp;&nbsp;•&ensp;อาหารจำพวกถั่วเมล็ดแห้ง เช่น ถั่วเหลือง ถั่วลิสง ถั่วเขียว ถั่วแดง</p>
   <p> &nbsp;&nbsp;&nbsp;&nbsp;•&ensp;อาหารจำพวกผัก เช่น มันฝรั่ง กล้วย แตงโม ผักโขม</p>
   
-    </div>
-
-
-    
+    </div>    
     <div className="productimage6">
         <div>
           <img

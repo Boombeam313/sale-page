@@ -13,9 +13,9 @@ const OrderSchema = new mongoose.Schema({
 const Order = mongoose.model("Order", OrderSchema);
 
 const slipBillSchema = new mongoose.Schema({
-  orderId:  String , // Link to User ID
-  image: Buffer,
-  createAt: { type: Date, default: Date.now, required: true}, // Time stamp
+  orderId:  String , 
+  image: {type: Buffer, required: true},
+  createAt: { type: Date, default: Date.now, required: true}, 
 });
 
 const SilpBill = mongoose.model('SilpBill', slipBillSchema)
