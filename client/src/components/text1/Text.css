@@ -28,14 +28,17 @@
     margin-bottom: 10px;
     font-weight: bold;
   }
-  
-  
 
+  
+  
 .font-family1 {
   font-size: 30px;
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: .25px;
+  
 }
 
 
@@ -177,6 +180,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
   
 }
 .title3 {
@@ -195,6 +200,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
   
 }
 .productimage3 {
@@ -212,8 +219,8 @@
   font-family: 'Kanit', sans-serif;
   text-align: left;
   margin-bottom: 10px;
-  margin-left: 120px;
-  margin-right: 120px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 .productimage4{
   display: flex;
@@ -241,6 +248,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 
 
@@ -267,6 +276,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 .title6 {
   font-size: 30px;
@@ -283,6 +294,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 
 
@@ -299,6 +312,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 
 .title8 {
@@ -330,6 +345,8 @@
   font-family: 'Kanit';
   text-align: left;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
 }
 .nanovatext{
   font-size: 87px;
@@ -351,8 +368,9 @@
       font-size: 24px;
       font-family: 'Kanit';
       text-align: left;
-      font-weight: bold;
       margin-bottom: 10px;
+      overflow-wrap: break-word;
+      letter-spacing: 0.05em;
       
     }
 
@@ -926,7 +944,8 @@
     .font-family6,
     .font-family7,
     .font-family8,
-    .font-family9 {
+    .font-family9, 
+    .font-family10{
       font-size: 18px;
 
     }

@@ -29,7 +29,7 @@
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999; /* กำหนดค่า z-index สูงกว่า */
+    z-index: 9999; 
 }
 
 .cookie-banner p {
