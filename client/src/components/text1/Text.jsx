@@ -467,7 +467,7 @@ export default function Text() {
         />
       </div>
       <div className="small-heading">
-          nano <span style={{ fontSize: '144px', color: '#710C04' }}>VA</span> 
+          nano <span style={{ color: '#710C04' }}>VA</span> 
         </div>
 
      </div>

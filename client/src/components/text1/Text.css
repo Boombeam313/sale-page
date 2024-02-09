@@ -376,7 +376,7 @@
 
     .review-heading{
     text-align: center;
-    font-Size: 140px;
+    font-Size: 50px;
     font-weight: bold;
     }
     .imagereview1 {
@@ -450,7 +450,7 @@
 
       .Testtheproduct{
         text-align: center;
-        font-Size: 80px;
+        font-Size: 50px;
         font-weight: bold;
         
         }
@@ -880,7 +880,7 @@
   }
   
   .review-heading {
-    font-size: 150px;
+    font-size: 50px;
     font-family: 'Kanit';
     margin-bottom: 20px;
     color: black;
@@ -922,7 +922,7 @@
   
   .small-heading {
     text-align: center;
-    font-size: 144px;
+    font-size: 130px;
     font-family: 'Kanit';
     color: black;
     margin-bottom: 20px;
@@ -948,6 +948,9 @@
     .font-family10{
       font-size: 18px;
 
+    }
+    .small-heading {
+      font-size: 80px;
     }
   }
 
